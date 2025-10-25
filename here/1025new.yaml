@@ -1,0 +1,1198 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+    - 114.114.114.114
+    - 180.76.76.76
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+
+
+proxies:
+  - type: ss
+    name: 🇭🇰HK_6 | ⬇️ 2.6MB/s
+    server: hzhz1.sssyun.xyz
+    port: 19527
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇹🇼TW_2 | ⬇️ 2.4MB/s
+    server: hzhz1.sssyun.xyz
+    port: 32207
+    cipher: 2022-blake3-aes-128-gcm
+    password: NjVhMWE2YmVmNzg4MTcwMA==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: trojan
+    name: 🇯🇵JP_1 | ⬇️ 1.0MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18005
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_4 | ⬇️ 1.3MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18003
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_13 | ⬇️ 1.7MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18053
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_23 | ⬇️ 1.0MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18075
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_35 | ⬇️ 2.6MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18089
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_75 | ⬇️ 1.6MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17099
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_25 | ⬇️ 1.3MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18077
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_66 | ⬇️ 1.6MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17084
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_14 | ⬇️ 1.1MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18063
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_15 | ⬇️ 1.0MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18073
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_16 | ⬇️ 2.0MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18069
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_32 | ⬇️ 1.4MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18086
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_41 | ⬇️ 3.5MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18093
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_55 | ⬇️ 1.5MB/s
+    server: jp02.weyaf9sdoh2h.space
+    port: 19026
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_61 | ⬇️ 1.1MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17058
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_64 | ⬇️ 1.1MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17059
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_67 | ⬇️ 1.3MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17085
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_20 | ⬇️ 1.2MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18067
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_45 | ⬇️ 1.1MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18095
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_60 | ⬇️ 1.1MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17056
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_65 | ⬇️ 1.1MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17063
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_5 | ⬇️ 1.9MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18037
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_12 | ⬇️ 1.3MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18048
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_37 | ⬇️ 2.0MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18090
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_3 | ⬇️ 1.0MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18004
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_68 | ⬇️ 1.8MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17090
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_21 | ⬇️ 1.8MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18072
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_24 | ⬇️ 1.6MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18074
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_58 | ⬇️ 1.4MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17012
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: vmess
+    name: 🇮🇳IN_1 | ⬇️ 5.2MB/s
+    server: 163.223.52.61
+    port: 44829
+    uuid: 05452c63-4e27-4af6-e0e6-92ceff88cba7
+    alterId: 0
+    network: tcp
+    cipher: auto
+  - type: trojan
+    name: 🇯🇵JP_27 | ⬇️ 1.4MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18085
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_2 | ⬇️ 1.1MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18008
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_51 | ⬇️ 1.1MB/s
+    server: jp02.weyaf9sdoh2h.space
+    port: 19037
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_17 | ⬇️ 2.6MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18070
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_52 | ⬇️ 1.3MB/s
+    server: jp02.weyaf9sdoh2h.space
+    port: 19030
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_57 | ⬇️ 1.1MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17011
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_46 | ⬇️ 1.7MB/s
+    server: jp02.weyaf9sdoh2h.space
+    port: 19001
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_70 | ⬇️ 1.2MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17091
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_6 | ⬇️ 1.2MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18040
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_31 | ⬇️ 2.1MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18083
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_29 | ⬇️ 1.4MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18084
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_43 | ⬇️ 3.0MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18094
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_44 | ⬇️ 4.8MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18096
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: ss
+    name: 🇯🇵JP_87 | ⬇️ 1.3MB/s
+    server: hzhz1.sssyun.xyz
+    port: 49207
+    cipher: 2022-blake3-aes-256-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNjE5OWQyNDYxZjM1MjA0OTg=:ZDU1MTQ5NmEtODAwNS00OWU0LTgzOTYtOGU5YTc4OTc=
+  - type: trojan
+    name: 🇯🇵JP_22 | ⬇️ 1.8MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18066
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_40 | ⬇️ 3.1MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18092
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_28 | ⬇️ 1.7MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18081
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_54 | ⬇️ 1.5MB/s
+    server: jp02.weyaf9sdoh2h.space
+    port: 19000
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_42 | ⬇️ 3.7MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18099
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_56 | ⬇️ 2.0MB/s
+    server: jp02.weyaf9sdoh2h.space
+    port: 19013
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_63 | ⬇️ 1.0MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17054
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_7 | ⬇️ 1.8MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18044
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_11 | ⬇️ 1.4MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18058
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_34 | ⬇️ 1.8MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18079
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_50 | ⬇️ 2.6MB/s
+    server: jp02.weyaf9sdoh2h.space
+    port: 19015
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_72 | ⬇️ 1.1MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17095
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_10 | ⬇️ 1.2MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18057
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_19 | ⬇️ 1.5MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18071
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_59 | ⬇️ 1.4MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17039
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_74 | ⬇️ 6.4MB/s
+    server: 37.202.200.11
+    port: 12412
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: wjp04.weyaf9sdoh2h.space
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_9 | ⬇️ 1.3MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18056
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_30 | ⬇️ 1.2MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18080
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_38 | ⬇️ 3.4MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18091
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_49 | ⬇️ 2.3MB/s
+    server: jp02.weyaf9sdoh2h.space
+    port: 19042
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_36 | ⬇️ 1.2MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18059
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_18 | ⬇️ 1.9MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18076
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_26 | ⬇️ 1.9MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18068
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_39 | ⬇️ 1.2MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18097
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_62 | ⬇️ 1.3MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17053
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_33 | ⬇️ 2.3MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18078
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_73 | ⬇️ 1.5MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17098
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_8 | ⬇️ 1.1MB/s
+    server: jp01.weyaf9sdoh2h.space
+    port: 18052
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_47 | ⬇️ 2.1MB/s
+    server: jp02.weyaf9sdoh2h.space
+    port: 19028
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_48 | ⬇️ 1.8MB/s
+    server: jp02.weyaf9sdoh2h.space
+    port: 19025
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_69 | ⬇️ 1.9MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17094
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇯🇵JP_71 | ⬇️ 1.9MB/s
+    server: jp03.weyaf9sdoh2h.space
+    port: 17096
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: vmess
+    name: 🇬🇧GB_1 | ⬇️ 7.2MB/s
+    server: salamdash.bedonemarz.site
+    port: 444
+    uuid: 89de8c17-9b41-4632-9a0b-440f850548fd
+    alterId: 0
+    network: tcp
+    cipher: auto
+  - type: ss
+    name: 🇸🇬SG_11 | ⬇️ 1.9MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39505
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: trojan
+    name: 🇯🇵JP_53 | ⬇️ 4.2MB/s
+    server: jp02.weyaf9sdoh2h.space
+    port: 19044
+    password: 898e1dca-14b2-4371-abc8-1b9f839bff6d
+    network: tcp
+    sni: TG.WangCai2
+    fingerprint: chrome
+    tls: true
+  - type: trojan
+    name: 🇺🇸US_21 | ⬇️ 1.1MB/s
+    server: 158.101.11.204
+    port: 15805
+    password: iwangjie
+    network: ws
+    sni: nodes.830901.xyz
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: nodes.830901.xyz
+  - type: ss
+    name: 🇺🇸US_49 | ⬇️ 3.5MB/s
+    server: us.vmagnum.win
+    port: 57456
+    cipher: chacha20-ietf-poly1305
+    password: 360e21d21977dc11
+  - type: ss
+    name: 🇺🇸US_17 | ⬇️ 2.4MB/s
+    server: hzhz1.sssyun.xyz
+    port: 12980
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇩🇪DE_6 | ⬇️ 2.2MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39987
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇭🇰HK_7 | ⬇️ 1.8MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39301
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇺🇸US_16 | ⬇️ 1.9MB/s
+    server: hzhz1.sssyun.xyz
+    port: 12983
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇸🇬SG_13 | ⬇️ 1.6MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39204
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇯🇵JP_88 | ⬇️ 2.3MB/s
+    server: hzhz1.sssyun.xyz
+    port: 19529
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇨🇦CA_3 | ⬇️ 1.6MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39209
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - 🇭🇰HK_6 | ⬇️ 2.6MB/s
+      - 🇹🇼TW_2 | ⬇️ 2.4MB/s
+      - 🇯🇵JP_1 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_4 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_13 | ⬇️ 1.7MB/s
+      - 🇯🇵JP_23 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_35 | ⬇️ 2.6MB/s
+      - 🇯🇵JP_75 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_25 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_66 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_14 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_15 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_16 | ⬇️ 2.0MB/s
+      - 🇯🇵JP_32 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_41 | ⬇️ 3.5MB/s
+      - 🇯🇵JP_55 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_61 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_64 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_67 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_20 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_45 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_60 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_65 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_5 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_12 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_37 | ⬇️ 2.0MB/s
+      - 🇯🇵JP_3 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_68 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_21 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_24 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_58 | ⬇️ 1.4MB/s
+      - 🇮🇳IN_1 | ⬇️ 5.2MB/s
+      - 🇯🇵JP_27 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_2 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_51 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_17 | ⬇️ 2.6MB/s
+      - 🇯🇵JP_52 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_57 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_46 | ⬇️ 1.7MB/s
+      - 🇯🇵JP_70 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_6 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_31 | ⬇️ 2.1MB/s
+      - 🇯🇵JP_29 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_43 | ⬇️ 3.0MB/s
+      - 🇯🇵JP_44 | ⬇️ 4.8MB/s
+      - 🇯🇵JP_87 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_22 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_40 | ⬇️ 3.1MB/s
+      - 🇯🇵JP_28 | ⬇️ 1.7MB/s
+      - 🇯🇵JP_54 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_42 | ⬇️ 3.7MB/s
+      - 🇯🇵JP_56 | ⬇️ 2.0MB/s
+      - 🇯🇵JP_63 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_7 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_11 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_34 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_50 | ⬇️ 2.6MB/s
+      - 🇯🇵JP_72 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_10 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_19 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_59 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_74 | ⬇️ 6.4MB/s
+      - 🇯🇵JP_9 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_30 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_38 | ⬇️ 3.4MB/s
+      - 🇯🇵JP_49 | ⬇️ 2.3MB/s
+      - 🇯🇵JP_36 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_18 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_26 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_39 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_62 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_33 | ⬇️ 2.3MB/s
+      - 🇯🇵JP_73 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_8 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_47 | ⬇️ 2.1MB/s
+      - 🇯🇵JP_48 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_69 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_71 | ⬇️ 1.9MB/s
+      - 🇬🇧GB_1 | ⬇️ 7.2MB/s
+      - 🇸🇬SG_11 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_53 | ⬇️ 4.2MB/s
+      - 🇺🇸US_21 | ⬇️ 1.1MB/s
+      - 🇺🇸US_49 | ⬇️ 3.5MB/s
+      - 🇺🇸US_17 | ⬇️ 2.4MB/s
+      - 🇩🇪DE_6 | ⬇️ 2.2MB/s
+      - 🇭🇰HK_7 | ⬇️ 1.8MB/s
+      - 🇺🇸US_16 | ⬇️ 1.9MB/s
+      - 🇸🇬SG_13 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_88 | ⬇️ 2.3MB/s
+      - 🇨🇦CA_3 | ⬇️ 1.6MB/s
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - 🇭🇰HK_6 | ⬇️ 2.6MB/s
+      - 🇹🇼TW_2 | ⬇️ 2.4MB/s
+      - 🇯🇵JP_1 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_4 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_13 | ⬇️ 1.7MB/s
+      - 🇯🇵JP_23 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_35 | ⬇️ 2.6MB/s
+      - 🇯🇵JP_75 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_25 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_66 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_14 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_15 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_16 | ⬇️ 2.0MB/s
+      - 🇯🇵JP_32 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_41 | ⬇️ 3.5MB/s
+      - 🇯🇵JP_55 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_61 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_64 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_67 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_20 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_45 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_60 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_65 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_5 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_12 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_37 | ⬇️ 2.0MB/s
+      - 🇯🇵JP_3 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_68 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_21 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_24 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_58 | ⬇️ 1.4MB/s
+      - 🇮🇳IN_1 | ⬇️ 5.2MB/s
+      - 🇯🇵JP_27 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_2 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_51 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_17 | ⬇️ 2.6MB/s
+      - 🇯🇵JP_52 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_57 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_46 | ⬇️ 1.7MB/s
+      - 🇯🇵JP_70 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_6 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_31 | ⬇️ 2.1MB/s
+      - 🇯🇵JP_29 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_43 | ⬇️ 3.0MB/s
+      - 🇯🇵JP_44 | ⬇️ 4.8MB/s
+      - 🇯🇵JP_87 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_22 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_40 | ⬇️ 3.1MB/s
+      - 🇯🇵JP_28 | ⬇️ 1.7MB/s
+      - 🇯🇵JP_54 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_42 | ⬇️ 3.7MB/s
+      - 🇯🇵JP_56 | ⬇️ 2.0MB/s
+      - 🇯🇵JP_63 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_7 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_11 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_34 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_50 | ⬇️ 2.6MB/s
+      - 🇯🇵JP_72 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_10 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_19 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_59 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_74 | ⬇️ 6.4MB/s
+      - 🇯🇵JP_9 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_30 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_38 | ⬇️ 3.4MB/s
+      - 🇯🇵JP_49 | ⬇️ 2.3MB/s
+      - 🇯🇵JP_36 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_18 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_26 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_39 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_62 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_33 | ⬇️ 2.3MB/s
+      - 🇯🇵JP_73 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_8 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_47 | ⬇️ 2.1MB/s
+      - 🇯🇵JP_48 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_69 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_71 | ⬇️ 1.9MB/s
+      - 🇬🇧GB_1 | ⬇️ 7.2MB/s
+      - 🇸🇬SG_11 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_53 | ⬇️ 4.2MB/s
+      - 🇺🇸US_21 | ⬇️ 1.1MB/s
+      - 🇺🇸US_49 | ⬇️ 3.5MB/s
+      - 🇺🇸US_17 | ⬇️ 2.4MB/s
+      - 🇩🇪DE_6 | ⬇️ 2.2MB/s
+      - 🇭🇰HK_7 | ⬇️ 1.8MB/s
+      - 🇺🇸US_16 | ⬇️ 1.9MB/s
+      - 🇸🇬SG_13 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_88 | ⬇️ 2.3MB/s
+      - 🇨🇦CA_3 | ⬇️ 1.6MB/s
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇭🇰HK_6 | ⬇️ 2.6MB/s
+      - 🇹🇼TW_2 | ⬇️ 2.4MB/s
+      - 🇯🇵JP_1 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_4 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_13 | ⬇️ 1.7MB/s
+      - 🇯🇵JP_23 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_35 | ⬇️ 2.6MB/s
+      - 🇯🇵JP_75 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_25 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_66 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_14 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_15 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_16 | ⬇️ 2.0MB/s
+      - 🇯🇵JP_32 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_41 | ⬇️ 3.5MB/s
+      - 🇯🇵JP_55 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_61 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_64 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_67 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_20 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_45 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_60 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_65 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_5 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_12 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_37 | ⬇️ 2.0MB/s
+      - 🇯🇵JP_3 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_68 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_21 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_24 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_58 | ⬇️ 1.4MB/s
+      - 🇮🇳IN_1 | ⬇️ 5.2MB/s
+      - 🇯🇵JP_27 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_2 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_51 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_17 | ⬇️ 2.6MB/s
+      - 🇯🇵JP_52 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_57 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_46 | ⬇️ 1.7MB/s
+      - 🇯🇵JP_70 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_6 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_31 | ⬇️ 2.1MB/s
+      - 🇯🇵JP_29 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_43 | ⬇️ 3.0MB/s
+      - 🇯🇵JP_44 | ⬇️ 4.8MB/s
+      - 🇯🇵JP_87 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_22 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_40 | ⬇️ 3.1MB/s
+      - 🇯🇵JP_28 | ⬇️ 1.7MB/s
+      - 🇯🇵JP_54 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_42 | ⬇️ 3.7MB/s
+      - 🇯🇵JP_56 | ⬇️ 2.0MB/s
+      - 🇯🇵JP_63 | ⬇️ 1.0MB/s
+      - 🇯🇵JP_7 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_11 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_34 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_50 | ⬇️ 2.6MB/s
+      - 🇯🇵JP_72 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_10 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_19 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_59 | ⬇️ 1.4MB/s
+      - 🇯🇵JP_74 | ⬇️ 6.4MB/s
+      - 🇯🇵JP_9 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_30 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_38 | ⬇️ 3.4MB/s
+      - 🇯🇵JP_49 | ⬇️ 2.3MB/s
+      - 🇯🇵JP_36 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_18 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_26 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_39 | ⬇️ 1.2MB/s
+      - 🇯🇵JP_62 | ⬇️ 1.3MB/s
+      - 🇯🇵JP_33 | ⬇️ 2.3MB/s
+      - 🇯🇵JP_73 | ⬇️ 1.5MB/s
+      - 🇯🇵JP_8 | ⬇️ 1.1MB/s
+      - 🇯🇵JP_47 | ⬇️ 2.1MB/s
+      - 🇯🇵JP_48 | ⬇️ 1.8MB/s
+      - 🇯🇵JP_69 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_71 | ⬇️ 1.9MB/s
+      - 🇬🇧GB_1 | ⬇️ 7.2MB/s
+      - 🇸🇬SG_11 | ⬇️ 1.9MB/s
+      - 🇯🇵JP_53 | ⬇️ 4.2MB/s
+      - 🇺🇸US_21 | ⬇️ 1.1MB/s
+      - 🇺🇸US_49 | ⬇️ 3.5MB/s
+      - 🇺🇸US_17 | ⬇️ 2.4MB/s
+      - 🇩🇪DE_6 | ⬇️ 2.2MB/s
+      - 🇭🇰HK_7 | ⬇️ 1.8MB/s
+      - 🇺🇸US_16 | ⬇️ 1.9MB/s
+      - 🇸🇬SG_13 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_88 | ⬇️ 2.3MB/s
+      - 🇨🇦CA_3 | ⬇️ 1.6MB/s
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rules/providers/LocalAreaNetwork.list
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./rules/providers/BanAD.list
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./rules/providers/BanProgramAD.list
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rules/providers/GoogleCN.list
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./rules/providers/SteamCN.list
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./rules/providers/Telegram.list
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rules/providers/ProxyMedia.list
+    interval: 86400
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./rules/providers/ProxyLite.list
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rules/providers/ChinaDomain.list
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rules/providers/ChinaCompanyIp.list
+    interval: 86400
+
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🛑 全球拦截
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Telegram,🚀 节点选择
+  - RULE-SET,ProxyMedia,🚀 节点选择
+  - RULE-SET,ProxyLite,🚀 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
