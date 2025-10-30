@@ -1,0 +1,243 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+    - 114.114.114.114
+    - 180.76.76.76
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+
+
+proxies:
+  - type: hysteria2
+    name: TG@crackhub_cn
+    server: 203.190.0.132
+    port: 34000
+    password: 21-84d2-477f-bbcc-283956cc3e36
+    skip-cert-verify: true
+    sni: node.flownet.store
+  - type: hysteria2
+    name: 下次重置1天后
+    server: 203.190.0.132
+    port: 34000
+    password: 21-84d2-477f-bbcc-283956cc3e36
+    skip-cert-verify: true
+    sni: node.flownet.store
+  - type: hysteria2
+    name: 套餐到期：2139-11-12
+    server: 203.190.0.132
+    port: 34000
+    password: 21-84d2-477f-bbcc-283956cc3e36
+    skip-cert-verify: true
+    sni: node.flownet.store
+  - type: hysteria2
+    name: 电报频道每日更新
+    server: 203.190.0.132
+    port: 34000
+    password: 21-84d2-477f-bbcc-283956cc3e36
+    skip-cert-verify: true
+    sni: node.flownet.store
+  - type: hysteria2
+    name: 日本01
+    server: 203.190.0.132
+    port: 34000
+    password: 21-84d2-477f-bbcc-283956cc3e36
+    skip-cert-verify: true
+    sni: node.flownet.store
+  - type: hysteria2
+    name: 美国01
+    server: 107.174.52.160
+    port: 34588
+    password: 21-84d2-477f-bbcc-283956cc3e36
+    skip-cert-verify: true
+    sni: node.flownet.store
+  - type: hysteria2
+    name: 美国02
+    server: 192.227.237.62
+    port: 34588
+    password: 21-84d2-477f-bbcc-283956cc3e36
+    skip-cert-verify: true
+    sni: node.flownet.store
+  - type: hysteria2
+    name: 美国03
+    server: 152.53.54.139
+    port: 34588
+    password: 21-84d2-477f-bbcc-283956cc3e36
+    skip-cert-verify: true
+    sni: node.flownet.store
+  - type: hysteria2
+    name: 德国
+    server: 93.177.65.184
+    port: 34588
+    password: 21-84d2-477f-bbcc-283956cc3e36
+    skip-cert-verify: true
+    sni: node.flownet.store
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - TG@crackhub_cn
+      - 下次重置1天后
+      - 套餐到期：2139-11-12
+      - 电报频道每日更新
+      - 日本01
+      - 美国01
+      - 美国02
+      - 美国03
+      - 德国
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - TG@crackhub_cn
+      - 下次重置1天后
+      - 套餐到期：2139-11-12
+      - 电报频道每日更新
+      - 日本01
+      - 美国01
+      - 美国02
+      - 美国03
+      - 德国
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - TG@crackhub_cn
+      - 下次重置1天后
+      - 套餐到期：2139-11-12
+      - 电报频道每日更新
+      - 日本01
+      - 美国01
+      - 美国02
+      - 美国03
+      - 德国
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rules/providers/LocalAreaNetwork.list
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./rules/providers/BanAD.list
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./rules/providers/BanProgramAD.list
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rules/providers/GoogleCN.list
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./rules/providers/SteamCN.list
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./rules/providers/Telegram.list
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rules/providers/ProxyMedia.list
+    interval: 86400
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./rules/providers/ProxyLite.list
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rules/providers/ChinaDomain.list
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rules/providers/ChinaCompanyIp.list
+    interval: 86400
+
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🛑 全球拦截
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Telegram,🚀 节点选择
+  - RULE-SET,ProxyMedia,🚀 节点选择
+  - RULE-SET,ProxyLite,🚀 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
