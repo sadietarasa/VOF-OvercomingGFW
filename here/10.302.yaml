@@ -1,0 +1,702 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+    - 114.114.114.114
+    - 180.76.76.76
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+
+
+proxies:
+  - type: vmess
+    name: TG@crackhub_cn_3
+    server: 8.210.215.228
+    port: 42994
+    uuid: 4d4697fe-43eb-4649-dcdc-191a3f9a32e4
+    alterId: 0
+    network: tcp
+    cipher: auto
+  - type: ss
+    name: 🇭🇰HK_11 | ⬇️ 1.4MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40023
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇭🇰HK_1 | ⬇️ 3.7MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40011
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇭🇰HK_15 | ⬇️ 2.1MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40010
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇭🇰HK_12 | ⬇️ 4.0MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40010
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇭🇰HK_13 | ⬇️ 3.5MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40011
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇭🇰HK_14 | ⬇️ 1.7MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40023
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇹🇼TW_5 | ⬇️ 3.1MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40017
+    cipher: 2022-blake3-aes-128-gcm
+    password: NjVhMWE2YmVmNzg4MTcwMA==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇭🇰HK_5 | ⬇️ 3.7MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39301
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇹🇼TW_2 | ⬇️ 3.6MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40017
+    cipher: 2022-blake3-aes-128-gcm
+    password: NjVhMWE2YmVmNzg4MTcwMA==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇭🇰HK_10 | ⬇️ 4.7MB/s
+    server: hzhz1.sssyun.xyz
+    port: 29527
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇸🇬SG_10 | ⬇️ 2.0MB/s
+    server: hzhz2.sssyun.xyz
+    port: 44014
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇸🇬SG_2 | ⬇️ 1.5MB/s
+    server: hzhz2.sssyun.xyz
+    port: 44014
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇸🇬SG_9 | ⬇️ 1.6MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40013
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇸🇬SG_1 | ⬇️ 6.7MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40013
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇭🇰HK_2 | ⬇️ 1.6MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39301
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇹🇼TW_3 | ⬇️ 3.1MB/s
+    server: hzhz1.sssyun.xyz
+    port: 32207
+    cipher: 2022-blake3-aes-128-gcm
+    password: NjVhMWE2YmVmNzg4MTcwMA==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇯🇵JP_14 | ⬇️ 5.0MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40019
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇸🇬SG_12 | ⬇️ 3.5MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39204
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇯🇵JP_16 | ⬇️ 5.6MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40020
+    cipher: 2022-blake3-aes-256-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNjE5OWQyNDYxZjM1MjA0OTg=:ZmYxYmE3MzQtZjY0Yy00ZTc1LThjNjctYjdlMzE4MjI=
+  - type: trojan
+    name: 🇳🇱NL_3 | ⬇️ 1.6MB/s
+    server: www.speedtest.net
+    port: 2096
+    password: HdihUYuf%2672826%3A33%2B4hshdiu%266562%2B2%3BJvsjdjr
+    network: ws
+    sni: NEt-ACCounT1.pAGEs.Dev
+    alpn:
+      - http/1.1
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /trNrffpXBCqDOiLjok?ed=2560
+  - type: ss
+    name: 🇯🇵JP_15 | ⬇️ 1.7MB/s
+    server: hzhz1.sssyun.xyz
+    port: 19529
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: vmess
+    name: 🇺🇸US_23 | ⬇️ 1.5MB/s
+    server: 2.59.62.63
+    port: 19365
+    uuid: 9583a647-b0ba-47b0-d4b0-4e12a0201d67
+    alterId: 0
+    network: tcp
+    cipher: auto
+  - type: ss
+    name: TG@crackhub_cn_4
+    server: 113.99.143.139
+    port: 26470
+    cipher: aes-128-gcm
+    password: b637f2e47b7827b308ebf399008075d2
+  - type: ss
+    name: 🇯🇵JP_18 | ⬇️ 2.0MB/s
+    server: hzhz1.sssyun.xyz
+    port: 19529
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: trojan
+    name: ❓Other_5 | ⬇️ 6.1MB/s
+    server: 5.182.84.22
+    port: 2096
+    password: Aimer
+    network: ws
+    sni: epge.muarua.filegear-sg.me
+    skip-cert-verify: true
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ts.hpc.tw
+  - type: ss
+    name: 🇯🇵JP_17 | ⬇️ 2.4MB/s
+    server: hzhz1.sssyun.xyz
+    port: 49207
+    cipher: 2022-blake3-aes-256-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNjE5OWQyNDYxZjM1MjA0OTg=:ZDU1MTQ5NmEtODAwNS00OWU0LTgzOTYtOGU5YTc4OTc=
+  - type: ss
+    name: 🇰🇷KR_4 | ⬇️ 1.3MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39206
+    cipher: 2022-blake3-aes-128-gcm
+    password: NjVhMWE2YmVmNzg4MTcwMA==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇰🇷KR_3 | ⬇️ 3.7MB/s
+    server: hzhz2.sssyun.xyz
+    port: 20116
+    cipher: 2022-blake3-aes-128-gcm
+    password: NjVhMWE2YmVmNzg4MTcwMA==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇳🇱NL_1 | ⬇️ 1.6MB/s
+    server: xce11lxz.pet0er23mh21qq.com
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: aYEzEWyquHob4y8-ZzJ6aw
+  - type: ss
+    name: 🇺🇸US_18 | ⬇️ 3.2MB/s
+    server: hzhz2.sssyun.xyz
+    port: 12981
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇺🇸US_21 | ⬇️ 3.9MB/s
+    server: hzhz2.sssyun.xyz
+    port: 12984
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇯🇵JP_1 | ⬇️ 4.2MB/s
+    server: hzhz1.sssyun.xyz
+    port: 49207
+    cipher: 2022-blake3-aes-256-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNjE5OWQyNDYxZjM1MjA0OTg=:ZmYxYmE3MzQtZjY0Yy00ZTc1LThjNjctYjdlMzE4MjI=
+  - type: ss
+    name: 🇺🇸US_45 | ⬇️ 3.3MB/s
+    server: hzhz2.sssyun.xyz
+    port: 12981
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇺🇸US_22 | ⬇️ 2.3MB/s
+    server: hzhz1.sssyun.xyz
+    port: 12983
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇸🇬SG_13 | ⬇️ 1.6MB/s
+    server: 172.237.88.77
+    port: 60155
+    cipher: chacha20-ietf-poly1305
+    password: txB1WwXla4QBSMpo2jGRqW
+  - type: ss
+    name: 🇺🇸US_47 | ⬇️ 1.1MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40022
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇺🇸US_19 | ⬇️ 2.9MB/s
+    server: hzhz1.sssyun.xyz
+    port: 12980
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇨🇦CA_4 | ⬇️ 1.7MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40021
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇺🇸US_3 | ⬇️ 4.3MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39203
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇺🇸US_4 | ⬇️ 6.0MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39203
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇺🇸US_1 | ⬇️ 3.8MB/s
+    server: hzhz1.sssyun.xyz
+    port: 12980
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇩🇪DE_3 | ⬇️ 5.6MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39987
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇭🇰HK_4 | ⬇️ 5.0MB/s
+    server: hzhz1.sssyun.xyz
+    port: 19527
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇸🇬SG_3 | ⬇️ 3.4MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39505
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: trojan
+    name: 🇷🇺RU_1 | ⬇️ 1.5MB/s
+    server: 46.29.161.237
+    port: 443
+    password: 3ef03de40a234d209bb2d3807ca0d643
+    network: tcp
+    sni: 46.29.161.237
+    skip-cert-verify: true
+    tls: true
+  - type: trojan
+    name: 🇭🇰HK_10 | ⬇️ 8.4MB/s
+    server: oss-cn-shanghai.letssepub.com
+    port: 20021
+    password: adbac894-90b9-4913-b77e-a715a8d4ebc8
+    network: tcp
+    sni: dingding-doc.com
+    skip-cert-verify: true
+    tls: true
+  - type: ss
+    name: 🇸🇬SG_11 | ⬇️ 2.9MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39204
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: 🇰🇷KR_5 | ⬇️ 5.5MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39206
+    cipher: 2022-blake3-aes-128-gcm
+    password: NjVhMWE2YmVmNzg4MTcwMA==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇭🇰HK_16 | ⬇️ 2.5MB/s
+    server: hzhz1.sssyun.xyz
+    port: 29527
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇩🇪DE_2 | ⬇️ 3.8MB/s
+    server: hzhz1.sssyun.xyz
+    port: 39987
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇭🇰HK_3 | ⬇️ 4.2MB/s
+    server: hzhz1.sssyun.xyz
+    port: 19527
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: 🇯🇵JP_13 | ⬇️ 2.1MB/s
+    server: hzhz2.sssyun.xyz
+    port: 40020
+    cipher: 2022-blake3-aes-256-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNjE5OWQyNDYxZjM1MjA0OTg=:ZDU1MTQ5NmEtODAwNS00OWU0LTgzOTYtOGU5YTc4OTc=
+  - type: ss
+    name: 🇺🇸US_5 | ⬇️ 4.7MB/s
+    server: hzhz1.sssyun.xyz
+    port: 12983
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: vmess
+    name: 🇺🇸US_4 | ⬇️ 4.3MB/s
+    server: wto.org
+    port: 443
+    uuid: 97b5343c-f8bd-40f2-b32d-7c98e1c196d4
+    alterId: 0
+    network: ws
+    cipher: auto
+    ws-opts:
+      path: /97b5343c-f8bd-40f2-b32d-7c98e1c196d4-vm?ed=2048
+    tls: true
+  - type: ss
+    name: 🇩🇪DE_1 | ⬇️ 8.3MB/s
+    server: hzhz2.sssyun.xyz
+    port: 39981
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+  - type: ss
+    name: TG@crackhub_cn_6
+    server: hzhz2.sssyun.xyz
+    port: 39981
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZDU1MTQ5NmEtODAwNS00OQ==
+  - type: ss
+    name: TG@crackhub_cn_7
+    server: hzhz1.sssyun.xyz
+    port: 39209
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:ZmYxYmE3MzQtZjY0Yy00ZQ==
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - TG@crackhub_cn_3
+      - 🇭🇰HK_11 | ⬇️ 1.4MB/s
+      - 🇭🇰HK_1 | ⬇️ 3.7MB/s
+      - 🇭🇰HK_15 | ⬇️ 2.1MB/s
+      - 🇭🇰HK_12 | ⬇️ 4.0MB/s
+      - 🇭🇰HK_13 | ⬇️ 3.5MB/s
+      - 🇭🇰HK_14 | ⬇️ 1.7MB/s
+      - 🇹🇼TW_5 | ⬇️ 3.1MB/s
+      - 🇭🇰HK_5 | ⬇️ 3.7MB/s
+      - 🇹🇼TW_2 | ⬇️ 3.6MB/s
+      - 🇭🇰HK_10 | ⬇️ 4.7MB/s
+      - 🇸🇬SG_10 | ⬇️ 2.0MB/s
+      - 🇸🇬SG_2 | ⬇️ 1.5MB/s
+      - 🇸🇬SG_9 | ⬇️ 1.6MB/s
+      - 🇸🇬SG_1 | ⬇️ 6.7MB/s
+      - 🇭🇰HK_2 | ⬇️ 1.6MB/s
+      - 🇹🇼TW_3 | ⬇️ 3.1MB/s
+      - 🇯🇵JP_14 | ⬇️ 5.0MB/s
+      - 🇸🇬SG_12 | ⬇️ 3.5MB/s
+      - 🇯🇵JP_16 | ⬇️ 5.6MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_15 | ⬇️ 1.7MB/s
+      - 🇺🇸US_23 | ⬇️ 1.5MB/s
+      - TG@crackhub_cn_4
+      - 🇯🇵JP_18 | ⬇️ 2.0MB/s
+      - ❓Other_5 | ⬇️ 6.1MB/s
+      - 🇯🇵JP_17 | ⬇️ 2.4MB/s
+      - 🇰🇷KR_4 | ⬇️ 1.3MB/s
+      - 🇰🇷KR_3 | ⬇️ 3.7MB/s
+      - 🇳🇱NL_1 | ⬇️ 1.6MB/s
+      - 🇺🇸US_18 | ⬇️ 3.2MB/s
+      - 🇺🇸US_21 | ⬇️ 3.9MB/s
+      - 🇯🇵JP_1 | ⬇️ 4.2MB/s
+      - 🇺🇸US_45 | ⬇️ 3.3MB/s
+      - 🇺🇸US_22 | ⬇️ 2.3MB/s
+      - 🇸🇬SG_13 | ⬇️ 1.6MB/s
+      - 🇺🇸US_47 | ⬇️ 1.1MB/s
+      - 🇺🇸US_19 | ⬇️ 2.9MB/s
+      - 🇨🇦CA_4 | ⬇️ 1.7MB/s
+      - 🇺🇸US_3 | ⬇️ 4.3MB/s
+      - 🇺🇸US_4 | ⬇️ 6.0MB/s
+      - 🇺🇸US_1 | ⬇️ 3.8MB/s
+      - 🇩🇪DE_3 | ⬇️ 5.6MB/s
+      - 🇭🇰HK_4 | ⬇️ 5.0MB/s
+      - 🇸🇬SG_3 | ⬇️ 3.4MB/s
+      - 🇷🇺RU_1 | ⬇️ 1.5MB/s
+      - 🇭🇰HK_10 | ⬇️ 8.4MB/s
+      - 🇸🇬SG_11 | ⬇️ 2.9MB/s
+      - 🇰🇷KR_5 | ⬇️ 5.5MB/s
+      - 🇭🇰HK_16 | ⬇️ 2.5MB/s
+      - 🇩🇪DE_2 | ⬇️ 3.8MB/s
+      - 🇭🇰HK_3 | ⬇️ 4.2MB/s
+      - 🇯🇵JP_13 | ⬇️ 2.1MB/s
+      - 🇺🇸US_5 | ⬇️ 4.7MB/s
+      - 🇺🇸US_4 | ⬇️ 4.3MB/s
+      - 🇩🇪DE_1 | ⬇️ 8.3MB/s
+      - TG@crackhub_cn_6
+      - TG@crackhub_cn_7
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - TG@crackhub_cn_3
+      - 🇭🇰HK_11 | ⬇️ 1.4MB/s
+      - 🇭🇰HK_1 | ⬇️ 3.7MB/s
+      - 🇭🇰HK_15 | ⬇️ 2.1MB/s
+      - 🇭🇰HK_12 | ⬇️ 4.0MB/s
+      - 🇭🇰HK_13 | ⬇️ 3.5MB/s
+      - 🇭🇰HK_14 | ⬇️ 1.7MB/s
+      - 🇹🇼TW_5 | ⬇️ 3.1MB/s
+      - 🇭🇰HK_5 | ⬇️ 3.7MB/s
+      - 🇹🇼TW_2 | ⬇️ 3.6MB/s
+      - 🇭🇰HK_10 | ⬇️ 4.7MB/s
+      - 🇸🇬SG_10 | ⬇️ 2.0MB/s
+      - 🇸🇬SG_2 | ⬇️ 1.5MB/s
+      - 🇸🇬SG_9 | ⬇️ 1.6MB/s
+      - 🇸🇬SG_1 | ⬇️ 6.7MB/s
+      - 🇭🇰HK_2 | ⬇️ 1.6MB/s
+      - 🇹🇼TW_3 | ⬇️ 3.1MB/s
+      - 🇯🇵JP_14 | ⬇️ 5.0MB/s
+      - 🇸🇬SG_12 | ⬇️ 3.5MB/s
+      - 🇯🇵JP_16 | ⬇️ 5.6MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_15 | ⬇️ 1.7MB/s
+      - 🇺🇸US_23 | ⬇️ 1.5MB/s
+      - TG@crackhub_cn_4
+      - 🇯🇵JP_18 | ⬇️ 2.0MB/s
+      - ❓Other_5 | ⬇️ 6.1MB/s
+      - 🇯🇵JP_17 | ⬇️ 2.4MB/s
+      - 🇰🇷KR_4 | ⬇️ 1.3MB/s
+      - 🇰🇷KR_3 | ⬇️ 3.7MB/s
+      - 🇳🇱NL_1 | ⬇️ 1.6MB/s
+      - 🇺🇸US_18 | ⬇️ 3.2MB/s
+      - 🇺🇸US_21 | ⬇️ 3.9MB/s
+      - 🇯🇵JP_1 | ⬇️ 4.2MB/s
+      - 🇺🇸US_45 | ⬇️ 3.3MB/s
+      - 🇺🇸US_22 | ⬇️ 2.3MB/s
+      - 🇸🇬SG_13 | ⬇️ 1.6MB/s
+      - 🇺🇸US_47 | ⬇️ 1.1MB/s
+      - 🇺🇸US_19 | ⬇️ 2.9MB/s
+      - 🇨🇦CA_4 | ⬇️ 1.7MB/s
+      - 🇺🇸US_3 | ⬇️ 4.3MB/s
+      - 🇺🇸US_4 | ⬇️ 6.0MB/s
+      - 🇺🇸US_1 | ⬇️ 3.8MB/s
+      - 🇩🇪DE_3 | ⬇️ 5.6MB/s
+      - 🇭🇰HK_4 | ⬇️ 5.0MB/s
+      - 🇸🇬SG_3 | ⬇️ 3.4MB/s
+      - 🇷🇺RU_1 | ⬇️ 1.5MB/s
+      - 🇭🇰HK_10 | ⬇️ 8.4MB/s
+      - 🇸🇬SG_11 | ⬇️ 2.9MB/s
+      - 🇰🇷KR_5 | ⬇️ 5.5MB/s
+      - 🇭🇰HK_16 | ⬇️ 2.5MB/s
+      - 🇩🇪DE_2 | ⬇️ 3.8MB/s
+      - 🇭🇰HK_3 | ⬇️ 4.2MB/s
+      - 🇯🇵JP_13 | ⬇️ 2.1MB/s
+      - 🇺🇸US_5 | ⬇️ 4.7MB/s
+      - 🇺🇸US_4 | ⬇️ 4.3MB/s
+      - 🇩🇪DE_1 | ⬇️ 8.3MB/s
+      - TG@crackhub_cn_6
+      - TG@crackhub_cn_7
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - TG@crackhub_cn_3
+      - 🇭🇰HK_11 | ⬇️ 1.4MB/s
+      - 🇭🇰HK_1 | ⬇️ 3.7MB/s
+      - 🇭🇰HK_15 | ⬇️ 2.1MB/s
+      - 🇭🇰HK_12 | ⬇️ 4.0MB/s
+      - 🇭🇰HK_13 | ⬇️ 3.5MB/s
+      - 🇭🇰HK_14 | ⬇️ 1.7MB/s
+      - 🇹🇼TW_5 | ⬇️ 3.1MB/s
+      - 🇭🇰HK_5 | ⬇️ 3.7MB/s
+      - 🇹🇼TW_2 | ⬇️ 3.6MB/s
+      - 🇭🇰HK_10 | ⬇️ 4.7MB/s
+      - 🇸🇬SG_10 | ⬇️ 2.0MB/s
+      - 🇸🇬SG_2 | ⬇️ 1.5MB/s
+      - 🇸🇬SG_9 | ⬇️ 1.6MB/s
+      - 🇸🇬SG_1 | ⬇️ 6.7MB/s
+      - 🇭🇰HK_2 | ⬇️ 1.6MB/s
+      - 🇹🇼TW_3 | ⬇️ 3.1MB/s
+      - 🇯🇵JP_14 | ⬇️ 5.0MB/s
+      - 🇸🇬SG_12 | ⬇️ 3.5MB/s
+      - 🇯🇵JP_16 | ⬇️ 5.6MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.6MB/s
+      - 🇯🇵JP_15 | ⬇️ 1.7MB/s
+      - 🇺🇸US_23 | ⬇️ 1.5MB/s
+      - TG@crackhub_cn_4
+      - 🇯🇵JP_18 | ⬇️ 2.0MB/s
+      - ❓Other_5 | ⬇️ 6.1MB/s
+      - 🇯🇵JP_17 | ⬇️ 2.4MB/s
+      - 🇰🇷KR_4 | ⬇️ 1.3MB/s
+      - 🇰🇷KR_3 | ⬇️ 3.7MB/s
+      - 🇳🇱NL_1 | ⬇️ 1.6MB/s
+      - 🇺🇸US_18 | ⬇️ 3.2MB/s
+      - 🇺🇸US_21 | ⬇️ 3.9MB/s
+      - 🇯🇵JP_1 | ⬇️ 4.2MB/s
+      - 🇺🇸US_45 | ⬇️ 3.3MB/s
+      - 🇺🇸US_22 | ⬇️ 2.3MB/s
+      - 🇸🇬SG_13 | ⬇️ 1.6MB/s
+      - 🇺🇸US_47 | ⬇️ 1.1MB/s
+      - 🇺🇸US_19 | ⬇️ 2.9MB/s
+      - 🇨🇦CA_4 | ⬇️ 1.7MB/s
+      - 🇺🇸US_3 | ⬇️ 4.3MB/s
+      - 🇺🇸US_4 | ⬇️ 6.0MB/s
+      - 🇺🇸US_1 | ⬇️ 3.8MB/s
+      - 🇩🇪DE_3 | ⬇️ 5.6MB/s
+      - 🇭🇰HK_4 | ⬇️ 5.0MB/s
+      - 🇸🇬SG_3 | ⬇️ 3.4MB/s
+      - 🇷🇺RU_1 | ⬇️ 1.5MB/s
+      - 🇭🇰HK_10 | ⬇️ 8.4MB/s
+      - 🇸🇬SG_11 | ⬇️ 2.9MB/s
+      - 🇰🇷KR_5 | ⬇️ 5.5MB/s
+      - 🇭🇰HK_16 | ⬇️ 2.5MB/s
+      - 🇩🇪DE_2 | ⬇️ 3.8MB/s
+      - 🇭🇰HK_3 | ⬇️ 4.2MB/s
+      - 🇯🇵JP_13 | ⬇️ 2.1MB/s
+      - 🇺🇸US_5 | ⬇️ 4.7MB/s
+      - 🇺🇸US_4 | ⬇️ 4.3MB/s
+      - 🇩🇪DE_1 | ⬇️ 8.3MB/s
+      - TG@crackhub_cn_6
+      - TG@crackhub_cn_7
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rules/providers/LocalAreaNetwork.list
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./rules/providers/BanAD.list
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./rules/providers/BanProgramAD.list
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rules/providers/GoogleCN.list
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./rules/providers/SteamCN.list
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./rules/providers/Telegram.list
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rules/providers/ProxyMedia.list
+    interval: 86400
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./rules/providers/ProxyLite.list
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rules/providers/ChinaDomain.list
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rules/providers/ChinaCompanyIp.list
+    interval: 86400
+
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🛑 全球拦截
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Telegram,🚀 节点选择
+  - RULE-SET,ProxyMedia,🚀 节点选择
+  - RULE-SET,ProxyLite,🚀 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
