@@ -1,0 +1,318 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+    - 114.114.114.114
+    - 180.76.76.76
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+
+
+proxies:
+  - type: vmess
+    name: TG@crackhub_cn抓取
+    server: q8vj6.4m4ow5.no8u9m8.vm331.cn
+    port: 58713
+    uuid: 0e05355a-dd6c-4d3a-8106-8e1e2c4927bd
+    alterId: 0
+    network: tcp
+    cipher: auto
+  - type: ss
+    name: 🇭🇰HK_6 | ⬇️ 1.1MB/s
+    server: zz1.xxxyun.top
+    port: 19527
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:N2I1NmE0OTUtMzlhOS00Mg==
+  - type: ss
+    name: 🇭🇰HK_11 | ⬇️ 1.4MB/s
+    server: zz2.xxxyun.top
+    port: 40010
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:MzgwN2QwNDktZWRmNy00Nw==
+  - type: trojan
+    name: TG@crackhub_cn抓取_2
+    server: oss-cn-shanghai.letssepub.com
+    port: 20021
+    password: adbac894-90b9-4913-b77e-a715a8d4ebc8
+    network: tcp
+    sni: dingding-doc.com
+    skip-cert-verify: true
+    tls: true
+  - type: trojan
+    name: 🇭🇰HK_4 | ⬇️ 1.9MB/s
+    server: 58.152.53.3
+    port: 443
+    password: BxceQaOe
+    network: tcp
+    sni: 58.152.53.3
+    skip-cert-verify: true
+    tls: true
+  - type: ss
+    name: 🇺🇸US_50 | ⬇️ 2.6MB/s
+    server: future.chenyi.pw
+    port: 23206
+    cipher: chacha20-ietf-poly1305
+    password: 403c8b4f-05cc-4609-9ad5-a46cf84327b1
+  - type: ss
+    name: 🇺🇸US_15 | ⬇️ 1.2MB/s
+    server: zz2.xxxyun.top
+    port: 12984
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:NzM3NDZkYWItY2RmNS00Zg==
+  - type: ss
+    name: 🇨🇦CA_6 | ⬇️ 1.2MB/s
+    server: zz1.xxxyun.top
+    port: 39209
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:MzgwN2QwNDktZWRmNy00Nw==
+  - type: vmess
+    name: 🇻🇳VN_1 | ⬇️ 3.2MB/s
+    server: 103.197.185.149
+    port: 23806
+    uuid: 841550b4-d4bf-4e3e-de9c-cff7baa47df3
+    alterId: 0
+    network: tcp
+    cipher: auto
+  - type: vmess
+    name: 🇦🇺AU_1 | ⬇️ 1.1MB/s
+    server: 160.187.111.112
+    port: 57313
+    uuid: 91943e7e-4a0e-4b5a-a4f9-e6dc0097184c
+    alterId: 0
+    network: tcp
+    cipher: auto
+  - type: ss
+    name: 🇭🇰HK_5 | ⬇️ 1.3MB/s
+    server: zz1.xxxyun.top
+    port: 29527
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:N2I1NmE0OTUtMzlhOS00Mg==
+  - type: ss
+    name: 🇭🇰HK_10 | ⬇️ 1.1MB/s
+    server: zz1.xxxyun.top
+    port: 19527
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:MzgwN2QwNDktZWRmNy00Nw==
+  - type: ss
+    name: 🇺🇸US_8 | ⬇️ 1.3MB/s
+    server: zz2.xxxyun.top
+    port: 12984
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:MzgwN2QwNDktZWRmNy00Nw==
+  - type: ss
+    name: 🇨🇦CA_5 | ⬇️ 1.4MB/s
+    server: zz2.xxxyun.top
+    port: 40021
+    cipher: 2022-blake3-aes-128-gcm
+    password: MDhhMTdjZDI0MjI2ZWRlNg==:N2I1NmE0OTUtMzlhOS00Mg==
+  - type: trojan
+    name: 🇺🇸US_40 | ⬇️ 3.1MB/s
+    server: 104.21.14.54
+    port: 443
+    password: e4cbe8b8-37db-4aaa-8469-b84f34c51ebc
+    network: ws
+    sni: 6666YHjU.777159.xYz
+    fingerprint: chrome
+    tls: true
+    ws-opts:
+      path: /dilyfCPEmLvYr5hYXD
+  - type: trojan
+    name: TG@crackhub_cn抓取_5
+    server: oss-cn-shanghai.letssepub.com
+    port: 20021
+    password: adbac894-90b9-4913-b77e-a715a8d4ebc8
+    network: tcp
+    sni: dingding-doc.com
+    skip-cert-verify: true
+    fingerprint: chrome
+    tls: true
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - TG@crackhub_cn抓取
+      - 🇭🇰HK_6 | ⬇️ 1.1MB/s
+      - 🇭🇰HK_11 | ⬇️ 1.4MB/s
+      - TG@crackhub_cn抓取_2
+      - 🇭🇰HK_4 | ⬇️ 1.9MB/s
+      - 🇺🇸US_50 | ⬇️ 2.6MB/s
+      - 🇺🇸US_15 | ⬇️ 1.2MB/s
+      - 🇨🇦CA_6 | ⬇️ 1.2MB/s
+      - 🇻🇳VN_1 | ⬇️ 3.2MB/s
+      - 🇦🇺AU_1 | ⬇️ 1.1MB/s
+      - 🇭🇰HK_5 | ⬇️ 1.3MB/s
+      - 🇭🇰HK_10 | ⬇️ 1.1MB/s
+      - 🇺🇸US_8 | ⬇️ 1.3MB/s
+      - 🇨🇦CA_5 | ⬇️ 1.4MB/s
+      - 🇺🇸US_40 | ⬇️ 3.1MB/s
+      - TG@crackhub_cn抓取_5
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - TG@crackhub_cn抓取
+      - 🇭🇰HK_6 | ⬇️ 1.1MB/s
+      - 🇭🇰HK_11 | ⬇️ 1.4MB/s
+      - TG@crackhub_cn抓取_2
+      - 🇭🇰HK_4 | ⬇️ 1.9MB/s
+      - 🇺🇸US_50 | ⬇️ 2.6MB/s
+      - 🇺🇸US_15 | ⬇️ 1.2MB/s
+      - 🇨🇦CA_6 | ⬇️ 1.2MB/s
+      - 🇻🇳VN_1 | ⬇️ 3.2MB/s
+      - 🇦🇺AU_1 | ⬇️ 1.1MB/s
+      - 🇭🇰HK_5 | ⬇️ 1.3MB/s
+      - 🇭🇰HK_10 | ⬇️ 1.1MB/s
+      - 🇺🇸US_8 | ⬇️ 1.3MB/s
+      - 🇨🇦CA_5 | ⬇️ 1.4MB/s
+      - 🇺🇸US_40 | ⬇️ 3.1MB/s
+      - TG@crackhub_cn抓取_5
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - TG@crackhub_cn抓取
+      - 🇭🇰HK_6 | ⬇️ 1.1MB/s
+      - 🇭🇰HK_11 | ⬇️ 1.4MB/s
+      - TG@crackhub_cn抓取_2
+      - 🇭🇰HK_4 | ⬇️ 1.9MB/s
+      - 🇺🇸US_50 | ⬇️ 2.6MB/s
+      - 🇺🇸US_15 | ⬇️ 1.2MB/s
+      - 🇨🇦CA_6 | ⬇️ 1.2MB/s
+      - 🇻🇳VN_1 | ⬇️ 3.2MB/s
+      - 🇦🇺AU_1 | ⬇️ 1.1MB/s
+      - 🇭🇰HK_5 | ⬇️ 1.3MB/s
+      - 🇭🇰HK_10 | ⬇️ 1.1MB/s
+      - 🇺🇸US_8 | ⬇️ 1.3MB/s
+      - 🇨🇦CA_5 | ⬇️ 1.4MB/s
+      - 🇺🇸US_40 | ⬇️ 3.1MB/s
+      - TG@crackhub_cn抓取_5
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rules/providers/LocalAreaNetwork.list
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./rules/providers/BanAD.list
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./rules/providers/BanProgramAD.list
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rules/providers/GoogleCN.list
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./rules/providers/SteamCN.list
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./rules/providers/Telegram.list
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rules/providers/ProxyMedia.list
+    interval: 86400
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./rules/providers/ProxyLite.list
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rules/providers/ChinaDomain.list
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rules/providers/ChinaCompanyIp.list
+    interval: 86400
+
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🛑 全球拦截
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Telegram,🚀 节点选择
+  - RULE-SET,ProxyMedia,🚀 节点选择
+  - RULE-SET,ProxyLite,🚀 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
