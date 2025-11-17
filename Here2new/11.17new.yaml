@@ -1,0 +1,783 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+    - 114.114.114.114
+    - 180.76.76.76
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+
+
+proxies:
+  - type: trojan
+    name: HK
+    server: 103.30.76.212
+    port: 666
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: SG
+    server: 47.236.173.242
+    port: 29887
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: SG_1
+    server: 8.222.209.252
+    port: 28465
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: TW
+    server: 210.61.97.241
+    port: 81
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: JP
+    server: 43.165.190.11
+    port: 42841
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: HK_1
+    server: 68.64.176.135
+    port: 443
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: NL
+    server: 2.59.183.197
+    port: 443
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: DE
+    server: 205.198.92.174
+    port: 8443
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: JP_1
+    server: 158.101.146.3
+    port: 54516
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: AU
+    server: 192.9.183.128
+    port: 45673
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: hysteria2
+    name: 抓取节点
+    server: 74.48.56.139
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: hysteria2
+    name: 抓取节点_1
+    server: 148.135.106.185
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: trojan
+    name: HK_2
+    server: 202.85.53.160
+    port: 7000
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: US
+    server: 45.154.214.116
+    port: 443
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: 🇧🇪BE_1 | ⬇️ 8.9MB/s
+    server: 45.83.20.29
+    port: 443
+    password: ff022848-4fb7-465a-9e6f-756d3dfc2c6a
+    network: ws
+    sni: joss.gpj.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/45.83.20.29=443
+  - type: trojan
+    name: US_1
+    server: 148.135.52.250
+    port: 48993
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: US_2
+    server: 74.48.89.211
+    port: 443
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: US_3
+    server: 66.112.215.227
+    port: 18819
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: vless
+    name: 🇳🇱NL_2 | ⬇️ 1.1MB/s
+    server: www.speedtest.net
+    port: 443
+    uuid: a55538a5-2fd5-4e89-8c94-ef9b2da061ea
+    network: ws
+    servername: n50-dz21lt64-cueuu2g4o5y3hpby-22.pages.dev
+    tls: true
+    encryption: none
+    ws-opts:
+      path: /vuut6bvfxroxjbja?ed=2560
+      headers:
+        Host: n50-dz21lt64-cueuu2g4o5y3hpby-22.pages.dev
+    client-fingerprint: safari
+  - type: trojan
+    name: JP_2
+    server: 150.230.214.172
+    port: 16957
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: US_4
+    server: 148.135.59.174
+    port: 54824
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: 🇷🇺RU_1 | ⬇️ 6.2MB/s
+    server: 95.182.120.208
+    port: 2053
+    password: 3b38715b-f08a-46dd-9904-7531ca4bb6e8
+    network: ws
+    sni: joss.gpj.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/95.182.120.208=2053
+  - type: hysteria2
+    name: 抓取节点_2
+    server: 154.16.183.27
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: trojan
+    name: KR
+    server: 203.239.249.99
+    port: 10927
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: KR_1
+    server: 121.147.60.220
+    port: 30031
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: vless
+    name: "严禁滥用"
+    server: 210.0.244.136
+    port: 51529
+    uuid: a5c97932-a045-403b-e174-2779d75130c9
+    network: tcp
+    servername: www.speedtest.org
+    tls: true
+    encryption: none
+    reality-opts:
+      public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY
+    client-fingerprint: chrome
+  - type: hysteria2
+    name: 🇨🇦CA_1 | ⬇️ 7.1MB/s
+    server: 140.238.137.165
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+    sni: du.wish.ml
+  - type: trojan
+    name: GB
+    server: 95.164.18.132
+    port: 81
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: trojan
+    name: SG_2
+    server: 138.2.69.236
+    port: 23334
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: hysteria2
+    name: 抓取节点_3
+    server: 62.72.163.251
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: trojan
+    name: ❓Other_1 | ⬇️ 3.1MB/s
+    server: 138.124.15.75
+    port: 443
+    password: 3ea503c7-2e03-424a-812d-6f0d803e73dc
+    network: ws
+    sni: joss.gpj.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/138.124.15.75=443
+  - type: hysteria2
+    name: 抓取节点_4
+    server: 51.81.223.31
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: trojan
+    name: JP_3
+    server: 45.76.198.248
+    port: 443
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+  - type: hysteria2
+    name: 抓取节点_5
+    server: 40.233.76.38
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+    sni: du.wish.ml
+  - type: vless
+    name: TG@crackhub_cn抓取
+    server: 188.253.21.154
+    port: 40721
+    uuid: bf3e8944-8d26-47de-8748-b9aa74cce974
+    network: tcp
+    servername: yahoo.com
+    tls: true
+    encryption: none
+    reality-opts:
+      public-key: TUZgwzcTvoROSbgnqMh3WorXVMxQNIF2zsEM39FQbyk
+      short-id: df8611c07d
+      spider-x: /
+    client-fingerprint: chrome
+  - type: hysteria2
+    name: 抓取节点_6
+    server: 144.22.223.153
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: hysteria2
+    name: 抓取节点_7
+    server: 46.17.43.71
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+    sni: du.wish.ml
+  - type: hysteria2
+    name: 抓取节点_8
+    server: 132.226.162.10
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: hysteria2
+    name: 抓取节点_9
+    server: 132.226.162.10
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: trojan
+    name: AE
+    server: 193.123.90.82
+    port: 12648
+    password: "0"
+    network: ws
+    sni: 5f708dd3.cialloneko.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: 5f708dd3.cialloneko.netlib.re
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - HK
+      - SG
+      - SG_1
+      - TW
+      - JP
+      - HK_1
+      - NL
+      - DE
+      - JP_1
+      - AU
+      - 抓取节点
+      - 抓取节点_1
+      - HK_2
+      - US
+      - 🇧🇪BE_1 | ⬇️ 8.9MB/s
+      - US_1
+      - US_2
+      - US_3
+      - 🇳🇱NL_2 | ⬇️ 1.1MB/s
+      - JP_2
+      - US_4
+      - 🇷🇺RU_1 | ⬇️ 6.2MB/s
+      - 抓取节点_2
+      - KR
+      - KR_1
+      - "严禁滥用"
+      - 🇨🇦CA_1 | ⬇️ 7.1MB/s
+      - GB
+      - SG_2
+      - 抓取节点_3
+      - ❓Other_1 | ⬇️ 3.1MB/s
+      - 抓取节点_4
+      - JP_3
+      - 抓取节点_5
+      - TG@crackhub_cn抓取
+      - 抓取节点_6
+      - 抓取节点_7
+      - 抓取节点_8
+      - 抓取节点_9
+      - AE
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - HK
+      - SG
+      - SG_1
+      - TW
+      - JP
+      - HK_1
+      - NL
+      - DE
+      - JP_1
+      - AU
+      - 抓取节点
+      - 抓取节点_1
+      - HK_2
+      - US
+      - 🇧🇪BE_1 | ⬇️ 8.9MB/s
+      - US_1
+      - US_2
+      - US_3
+      - 🇳🇱NL_2 | ⬇️ 1.1MB/s
+      - JP_2
+      - US_4
+      - 🇷🇺RU_1 | ⬇️ 6.2MB/s
+      - 抓取节点_2
+      - KR
+      - KR_1
+      - "严禁滥用"
+      - 🇨🇦CA_1 | ⬇️ 7.1MB/s
+      - GB
+      - SG_2
+      - 抓取节点_3
+      - ❓Other_1 | ⬇️ 3.1MB/s
+      - 抓取节点_4
+      - JP_3
+      - 抓取节点_5
+      - TG@crackhub_cn抓取
+      - 抓取节点_6
+      - 抓取节点_7
+      - 抓取节点_8
+      - 抓取节点_9
+      - AE
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - HK
+      - SG
+      - SG_1
+      - TW
+      - JP
+      - HK_1
+      - NL
+      - DE
+      - JP_1
+      - AU
+      - 抓取节点
+      - 抓取节点_1
+      - HK_2
+      - US
+      - 🇧🇪BE_1 | ⬇️ 8.9MB/s
+      - US_1
+      - US_2
+      - US_3
+      - 🇳🇱NL_2 | ⬇️ 1.1MB/s
+      - JP_2
+      - US_4
+      - 🇷🇺RU_1 | ⬇️ 6.2MB/s
+      - 抓取节点_2
+      - KR
+      - KR_1
+      - "严禁滥用"
+      - 🇨🇦CA_1 | ⬇️ 7.1MB/s
+      - GB
+      - SG_2
+      - 抓取节点_3
+      - ❓Other_1 | ⬇️ 3.1MB/s
+      - 抓取节点_4
+      - JP_3
+      - 抓取节点_5
+      - TG@crackhub_cn抓取
+      - 抓取节点_6
+      - 抓取节点_7
+      - 抓取节点_8
+      - 抓取节点_9
+      - AE
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rules/providers/LocalAreaNetwork.list
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./rules/providers/BanAD.list
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./rules/providers/BanProgramAD.list
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rules/providers/GoogleCN.list
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./rules/providers/SteamCN.list
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./rules/providers/Telegram.list
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rules/providers/ProxyMedia.list
+    interval: 86400
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./rules/providers/ProxyLite.list
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rules/providers/ChinaDomain.list
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rules/providers/ChinaCompanyIp.list
+    interval: 86400
+
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🛑 全球拦截
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Telegram,🚀 节点选择
+  - RULE-SET,ProxyMedia,🚀 节点选择
+  - RULE-SET,ProxyLite,🚀 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
