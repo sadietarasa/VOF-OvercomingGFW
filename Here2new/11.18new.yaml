@@ -1,0 +1,683 @@
+# ;不要随意改变关键字，否则会导致出错
+# ;acl4SSR规则
+# ;去广告：支持
+# ;自动测速：支持
+# ;微软分流：不支持
+# ;苹果分流：不支持
+# ;增强中国IP段：不支持
+# ;增强国外GFW：不支持
+# ;ruleset=🎯 全球直连,[]GEOIP,LAN
+
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+    - 114.114.114.114
+    - 180.76.76.76
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+
+
+proxies:
+  - type: hysteria2
+    name: 抓取节点
+    server: 148.135.106.185
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: hysteria2
+    name: 抓取节点_1
+    server: 46.17.43.71
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+    sni: du.wish.ml
+  - type: vless
+    name: "TG@crackhub_cn抓取"
+    server: 210.0.244.136
+    port: 51529
+    uuid: a5c97932-a045-403b-e174-2779d75130c9
+    network: tcp
+    servername: www.speedtest.org
+    tls: true
+    encryption: none
+    reality-opts:
+      public-key: qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY
+    client-fingerprint: chrome
+  - type: hysteria2
+    name: 抓取节点_2
+    server: 154.16.183.27
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: hysteria2
+    name: 抓取节点_3
+    server: 51.81.223.31
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: hysteria2
+    name: 抓取节点_4
+    server: 62.72.163.251
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: hysteria2
+    name: 抓取节点_5
+    server: 132.226.162.10
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: hysteria2
+    name: 抓取节点_6
+    server: 144.22.223.153
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: hysteria2
+    name: 抓取节点_7
+    server: 132.226.162.10
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: hysteria2
+    name: 抓取节点_8
+    server: 74.48.56.139
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: trojan
+    name: 🇭🇰HK_1 | ⬇️ 2.2MB/s
+    server: 219.79.165.55
+    port: 443
+    password: BxceQaOe
+    network: tcp
+    sni: t.me/ripaojiedian
+    skip-cert-verify: true
+    tls: true
+  - type: vless
+    name: 🇺🇸US_1 | ⬇️ 2.5MB/s
+    server: 77.110.119.225
+    port: 443
+    uuid: 4819860c-0e62-4804-9c59-967e5c2bed7a
+    network: tcp
+    servername: st.ozone.ru
+    tls: true
+    encryption: none
+    reality-opts:
+      public-key: hnec5SxCD6Os-u0FNi_YS5CML1a_oWb0niZJ1mGuFBo
+      short-id: 07e904766d29b958
+    client-fingerprint: chrome
+    flow: xtls-rprx-vision
+  - type: hysteria2
+    name: 🇧🇷BR_1 | ⬇️ 4.9MB/s
+    server: 132.226.162.10
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: vless
+    name: 🇺🇸US_2 | ⬇️ 2.7MB/s
+    server: 172.66.156.81
+    port: 80
+    uuid: fee15267-4f05-4f6c-a346-e7fe02be0614
+    network: ws
+    servername: websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.
+    encryption: none
+    ws-opts:
+      path: /@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy
+      headers:
+        Host: websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.
+  - type: hysteria2
+    name: 🇺🇸US_3 | ⬇️ 2.5MB/s
+    server: 75.127.13.83
+    port: 47974
+    password: 2c833c5d-cbcc-4afb-89ba-d17dc39db6f0
+    skip-cert-verify: true
+    sni: www.bing.com
+  - type: vless
+    name: 🇲🇺MU_1 | ⬇️ 2.1MB/s
+    server: ssssssss.zabc.net
+    port: 8443
+    uuid: 692ece70-c136-4f77-8921-1e99091b9987
+    network: ws
+    servername: ssssssss.zabc.net
+    tls: true
+    encryption: none
+    ws-opts:
+      path: /
+      headers:
+        Host: ssssssss.zabc.net
+    client-fingerprint: chrome
+    alpn:
+      - h3
+      - h2
+      - http/1.1
+  - type: hysteria2
+    name: 🇺🇸US_4 | ⬇️ 1.3MB/s
+    server: 51.81.223.22
+    port: 30102
+    password: 338ce171-d764-4610-8fd5-6688b0d321f0
+    skip-cert-verify: true
+  - type: vless
+    name: ❓Other_1 | ⬇️ 4.8MB/s
+    server: 2.59.134.242
+    port: 1002
+    uuid: 00000000-0000-4000-8000-000000000000
+    network: ws
+    servername: ennyfe.zipgd3vx91o.ddns-ip.net
+    tls: true
+    encryption: none
+    ws-opts:
+      path: /@Marisa_kristi
+      headers:
+        Host: ennyfe.zipgd3vx91o.ddns-ip.net
+    client-fingerprint: chrome
+  - type: vless
+    name: 🇺🇸US_5 | ⬇️ 3.0MB/s
+    server: www.speedtest.net
+    port: 80
+    uuid: fee15267-4f05-4f6c-a346-e7fe02be0614
+    network: ws
+    servername: websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.
+    encryption: none
+    ws-opts:
+      path: /@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy
+      headers:
+        Host: websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.
+  - type: vless
+    name: 🇩🇪DE_1 | ⬇️ 1.1MB/s
+    server: 104.21.80.1
+    port: 80
+    uuid: 81caa837-c213-4731-a02e-662380ad1e2f
+    network: ws
+    servername: cxrolvpn.freev2-edb.workers.dev
+    encryption: none
+    ws-opts:
+      path: /BJMz0Rpb9gejBzKP?ed=2560
+      headers:
+        Host: cxrolvpn.freev2-edb.workers.dev
+  - type: vless
+    name: 🇮🇹IT_2 | ⬇️ 4.1MB/s
+    server: it.quattro-tech.ru
+    port: 443
+    uuid: ab3aece1-4719-4093-826e-d320f64f6a25
+    network: tcp
+    servername: it.quattro-tech.ru
+    tls: true
+    encryption: none
+    reality-opts:
+      public-key: 10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc
+      short-id: 43dcff53849b81e6
+    client-fingerprint: chrome
+    flow: xtls-rprx-vision
+  - type: vless
+    name: 🇺🇸US_6 | ⬇️ 4.7MB/s
+    server: 3.143.235.221
+    port: 32252
+    uuid: f0a44f8f-c01f-490c-a6eb-29106a2509a4
+    network: grpc
+    servername: 3.143.235.221
+    tls: true
+    encryption: none
+    grpc-opts:
+      grpc-service-name: www.bing.com
+    client-fingerprint: chrome
+    alpn:
+      - h2
+      - http/1.1
+  - type: vless
+    name: 🇳🇱NL_4 | ⬇️ 4.8MB/s
+    server: l23.magicnetwork.info
+    port: 28995
+    uuid: 981d217a-17c5-4e9f-9147-8c9ad3c0707b
+    network: tcp
+    encryption: none
+  - type: vless
+    name: 🇹🇷TR_2 | ⬇️ 3.5MB/s
+    server: tr.nodes.rocketnetwork.ru
+    port: 443
+    uuid: bccbecc9-c1d2-45d1-b3fa-771a19b9831c
+    network: tcp
+    servername: tr.nodes.rocketnetwork.ru
+    tls: true
+    encryption: none
+    reality-opts:
+      public-key: Mn0DIMKW6zu0_D3E1qKO7xMlIVZvB-rqO_-f7Le2vAs
+      short-id: 428ef87fd47a3a32
+    client-fingerprint: chrome
+    flow: xtls-rprx-vision
+  - type: vless
+    name: 🇨🇦CA_2 | ⬇️ 4.5MB/s
+    server: 81.19.140.202
+    port: 60552
+    uuid: ad6b2d75-1973-4c0d-8a5f-739f22628ffd
+    network: tcp
+    servername: yandex.ru
+    tls: true
+    encryption: none
+    reality-opts:
+      public-key: QLOalXjMmrryGjcV7-jMDyWD2E7I23r9A95nqaP0Pho
+      short-id: e62fec30f1a0167e
+    client-fingerprint: chrome
+  - type: vless
+    name: 🇮🇱IL_2 | ⬇️ 4.3MB/s
+    server: israel-01.ptu.ink
+    port: 443
+    uuid: 6f83d534-5cbc-4c7b-9482-f4c428617731
+    network: tcp
+    servername: www.microsoft.com
+    tls: true
+    encryption: none
+    reality-opts:
+      public-key: _vPR5_NWghX038TY9DMQAf3dCTjGkpwqEVhVWQNsChY
+      short-id: 6f83ca929e5f2b66
+    client-fingerprint: chrome
+    flow: xtls-rprx-vision
+  - type: vless
+    name: 🇩🇪DE_2 | ⬇️ 8.0MB/s
+    server: de.nodes.rocketnetwork.ru
+    port: 443
+    uuid: bccbecc9-c1d2-45d1-b3fa-771a19b9831c
+    network: tcp
+    servername: fr.nodes.rocketnetwork.ru
+    tls: true
+    encryption: none
+    reality-opts:
+      public-key: Mn0DIMKW6zu0_D3E1qKO7xMlIVZvB-rqO_-f7Le2vAs
+      short-id: 428ef87fd47a3a32
+    client-fingerprint: chrome
+    flow: xtls-rprx-vision
+  - type: vmess
+    name: 🇺🇸US_8 | ⬇️ 5.6MB/s
+    server: cCc.922922.ShOp
+    port: 80
+    uuid: bce0c7cb-08d1-46a7-b77b-7bff8b46252f
+    alterId: 0
+    network: ws
+    cipher: auto
+    servername: cCc.922922.ShOp
+    ws-opts:
+      path: /RkUUbqhA9GJZBROjL3Q5vTymr
+      headers:
+        Host: cCc.922922.ShOp
+  - type: vless
+    name: 🇳🇱NL_6 | ⬇️ 3.6MB/s
+    server: www.speedtest.net
+    port: 2083
+    uuid: 0a2b5214-d38c-4b7e-b2e5-65e596b2bc55
+    network: ws
+    servername: golestan.hajalwi.ir.
+    tls: true
+    encryption: none
+    ws-opts:
+      path: /---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN---Golestanv_VPN?ed=8080
+      headers:
+        Host: golestan.hajalwi.ir.
+    client-fingerprint: chrome
+    alpn:
+      - h2
+      - http/1.1
+  - type: vless
+    name: 🇺🇸US_9 | ⬇️ 4.9MB/s
+    server: d-4bed-b726-2c53a82e4925.664.qzz.io
+    port: 443
+    uuid: 0507fbcd-b983-43a7-8e1d-2c561960ad4f
+    network: ws
+    servername: d-4bed-b726-2c53A82e4925.664.Qzz.Io
+    tls: true
+    encryption: none
+    ws-opts:
+      path: /a0XhDU2Cxr9noOhn
+      headers:
+        Host: d-4BED-b726-2C53a82E4925.664.Qzz.Io
+    client-fingerprint: chrome
+    alpn:
+      - http/1.1
+  - type: trojan
+    name: 🇺🇸US_10 | ⬇️ 5.3MB/s
+    server: d-4bed-b726-2c53a82e4925.664.qzz.io
+    port: 443
+    password: 0507fbcd-b983-43a7-8e1d-2c561960ad4f
+    network: ws
+    sni: d-4bED-B726-2C53a82E4925.664.Qzz.iO
+    alpn:
+      - http/1.1
+    fingerprint: chrome
+    tls: true
+    ws-opts:
+      path: /E2JXJM5geneWfr9noOhn
+  - type: trojan
+    name: 🇺🇸US_11 | ⬇️ 4.1MB/s
+    server: 4d41-b510-fc35f2d7ecd7.664.qzz.io
+    port: 443
+    password: 0507fbcd-b983-43a7-8e1d-2c561960ad4f
+    network: ws
+    sni: 4D41-B510-fC35F2d7ecD7.664.Qzz.iO
+    alpn:
+      - http/1.1
+    fingerprint: chrome
+    tls: true
+    ws-opts:
+      path: /E2JXJM5geneWfr9noOhn
+  - type: trojan
+    name: 🇨🇭CH_1 | ⬇️ 3.7MB/s
+    server: 194.87.18.124
+    port: 443
+    password: 019a8c1f-3d28-74e8-8a8e-40045d7ec77f
+    network: tcp
+    sni: www.bilibili.com
+    skip-cert-verify: true
+    tls: true
+  - type: trojan
+    name: 🇭🇰HK_2 | ⬇️ 6.5MB/s
+    server: 108.165.255.5
+    port: 443
+    password: 019a8c1f-3d28-74e8-8a8e-40045d7ec77f
+    network: tcp
+    sni: www.bilibili.com
+    skip-cert-verify: true
+    tls: true
+  - type: trojan
+    name: 🇭🇰HK_3 | ⬇️ 2.7MB/s
+    server: 38.207.160.35
+    port: 443
+    password: 019a8c1f-3d28-74e8-8a8e-40045d7ec77f
+    network: tcp
+    sni: www.bilibili.com
+    skip-cert-verify: true
+    tls: true
+  - type: trojan
+    name: 🇲🇾MY_1 | ⬇️ 5.3MB/s
+    server: 96.126.190.132
+    port: 443
+    password: 019a8c1f-3d28-74e8-8a8e-40045d7ec77f
+    network: tcp
+    sni: www.bilibili.com
+    skip-cert-verify: true
+    tls: true
+  - type: trojan
+    name: 🇲🇾MY_2 | ⬇️ 5.4MB/s
+    server: 96.126.190.245
+    port: 443
+    password: 019a8c1f-3d28-74e8-8a8e-40045d7ec77f
+    network: tcp
+    sni: www.bilibili.com
+    skip-cert-verify: true
+    tls: true
+  - type: trojan
+    name: 🇲🇾MY_3 | ⬇️ 7.7MB/s
+    server: 96.126.190.148
+    port: 443
+    password: 019a8c1f-3d28-74e8-8a8e-40045d7ec77f
+    network: tcp
+    sni: www.bilibili.com
+    skip-cert-verify: true
+    tls: true
+  - type: trojan
+    name: 🇮🇱IL_3 | ⬇️ 2.6MB/s
+    server: 45.144.172.243
+    port: 443
+    password: 019a8c1f-3d28-74e8-8a8e-40045d7ec77f
+    network: tcp
+    sni: www.bilibili.com
+    skip-cert-verify: true
+    tls: true
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - 抓取节点
+      - 抓取节点_1
+      - "TG@crackhub_cn抓取"
+      - 抓取节点_2
+      - 抓取节点_3
+      - 抓取节点_4
+      - 抓取节点_5
+      - 抓取节点_6
+      - 抓取节点_7
+      - 抓取节点_8
+      - 🇭🇰HK_1 | ⬇️ 2.2MB/s
+      - 🇺🇸US_1 | ⬇️ 2.5MB/s
+      - 🇧🇷BR_1 | ⬇️ 4.9MB/s
+      - 🇺🇸US_2 | ⬇️ 2.7MB/s
+      - 🇺🇸US_3 | ⬇️ 2.5MB/s
+      - 🇲🇺MU_1 | ⬇️ 2.1MB/s
+      - 🇺🇸US_4 | ⬇️ 1.3MB/s
+      - ❓Other_1 | ⬇️ 4.8MB/s
+      - 🇺🇸US_5 | ⬇️ 3.0MB/s
+      - 🇩🇪DE_1 | ⬇️ 1.1MB/s
+      - 🇮🇹IT_2 | ⬇️ 4.1MB/s
+      - 🇺🇸US_6 | ⬇️ 4.7MB/s
+      - 🇳🇱NL_4 | ⬇️ 4.8MB/s
+      - 🇹🇷TR_2 | ⬇️ 3.5MB/s
+      - 🇨🇦CA_2 | ⬇️ 4.5MB/s
+      - 🇮🇱IL_2 | ⬇️ 4.3MB/s
+      - 🇩🇪DE_2 | ⬇️ 8.0MB/s
+      - 🇺🇸US_8 | ⬇️ 5.6MB/s
+      - 🇳🇱NL_6 | ⬇️ 3.6MB/s
+      - 🇺🇸US_9 | ⬇️ 4.9MB/s
+      - 🇺🇸US_10 | ⬇️ 5.3MB/s
+      - 🇺🇸US_11 | ⬇️ 4.1MB/s
+      - 🇨🇭CH_1 | ⬇️ 3.7MB/s
+      - 🇭🇰HK_2 | ⬇️ 6.5MB/s
+      - 🇭🇰HK_3 | ⬇️ 2.7MB/s
+      - 🇲🇾MY_1 | ⬇️ 5.3MB/s
+      - 🇲🇾MY_2 | ⬇️ 5.4MB/s
+      - 🇲🇾MY_3 | ⬇️ 7.7MB/s
+      - 🇮🇱IL_3 | ⬇️ 2.6MB/s
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - 抓取节点
+      - 抓取节点_1
+      - "TG@crackhub_cn抓取"
+      - 抓取节点_2
+      - 抓取节点_3
+      - 抓取节点_4
+      - 抓取节点_5
+      - 抓取节点_6
+      - 抓取节点_7
+      - 抓取节点_8
+      - 🇭🇰HK_1 | ⬇️ 2.2MB/s
+      - 🇺🇸US_1 | ⬇️ 2.5MB/s
+      - 🇧🇷BR_1 | ⬇️ 4.9MB/s
+      - 🇺🇸US_2 | ⬇️ 2.7MB/s
+      - 🇺🇸US_3 | ⬇️ 2.5MB/s
+      - 🇲🇺MU_1 | ⬇️ 2.1MB/s
+      - 🇺🇸US_4 | ⬇️ 1.3MB/s
+      - ❓Other_1 | ⬇️ 4.8MB/s
+      - 🇺🇸US_5 | ⬇️ 3.0MB/s
+      - 🇩🇪DE_1 | ⬇️ 1.1MB/s
+      - 🇮🇹IT_2 | ⬇️ 4.1MB/s
+      - 🇺🇸US_6 | ⬇️ 4.7MB/s
+      - 🇳🇱NL_4 | ⬇️ 4.8MB/s
+      - 🇹🇷TR_2 | ⬇️ 3.5MB/s
+      - 🇨🇦CA_2 | ⬇️ 4.5MB/s
+      - 🇮🇱IL_2 | ⬇️ 4.3MB/s
+      - 🇩🇪DE_2 | ⬇️ 8.0MB/s
+      - 🇺🇸US_8 | ⬇️ 5.6MB/s
+      - 🇳🇱NL_6 | ⬇️ 3.6MB/s
+      - 🇺🇸US_9 | ⬇️ 4.9MB/s
+      - 🇺🇸US_10 | ⬇️ 5.3MB/s
+      - 🇺🇸US_11 | ⬇️ 4.1MB/s
+      - 🇨🇭CH_1 | ⬇️ 3.7MB/s
+      - 🇭🇰HK_2 | ⬇️ 6.5MB/s
+      - 🇭🇰HK_3 | ⬇️ 2.7MB/s
+      - 🇲🇾MY_1 | ⬇️ 5.3MB/s
+      - 🇲🇾MY_2 | ⬇️ 5.4MB/s
+      - 🇲🇾MY_3 | ⬇️ 7.7MB/s
+      - 🇮🇱IL_3 | ⬇️ 2.6MB/s
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 抓取节点
+      - 抓取节点_1
+      - "TG@crackhub_cn抓取"
+      - 抓取节点_2
+      - 抓取节点_3
+      - 抓取节点_4
+      - 抓取节点_5
+      - 抓取节点_6
+      - 抓取节点_7
+      - 抓取节点_8
+      - 🇭🇰HK_1 | ⬇️ 2.2MB/s
+      - 🇺🇸US_1 | ⬇️ 2.5MB/s
+      - 🇧🇷BR_1 | ⬇️ 4.9MB/s
+      - 🇺🇸US_2 | ⬇️ 2.7MB/s
+      - 🇺🇸US_3 | ⬇️ 2.5MB/s
+      - 🇲🇺MU_1 | ⬇️ 2.1MB/s
+      - 🇺🇸US_4 | ⬇️ 1.3MB/s
+      - ❓Other_1 | ⬇️ 4.8MB/s
+      - 🇺🇸US_5 | ⬇️ 3.0MB/s
+      - 🇩🇪DE_1 | ⬇️ 1.1MB/s
+      - 🇮🇹IT_2 | ⬇️ 4.1MB/s
+      - 🇺🇸US_6 | ⬇️ 4.7MB/s
+      - 🇳🇱NL_4 | ⬇️ 4.8MB/s
+      - 🇹🇷TR_2 | ⬇️ 3.5MB/s
+      - 🇨🇦CA_2 | ⬇️ 4.5MB/s
+      - 🇮🇱IL_2 | ⬇️ 4.3MB/s
+      - 🇩🇪DE_2 | ⬇️ 8.0MB/s
+      - 🇺🇸US_8 | ⬇️ 5.6MB/s
+      - 🇳🇱NL_6 | ⬇️ 3.6MB/s
+      - 🇺🇸US_9 | ⬇️ 4.9MB/s
+      - 🇺🇸US_10 | ⬇️ 5.3MB/s
+      - 🇺🇸US_11 | ⬇️ 4.1MB/s
+      - 🇨🇭CH_1 | ⬇️ 3.7MB/s
+      - 🇭🇰HK_2 | ⬇️ 6.5MB/s
+      - 🇭🇰HK_3 | ⬇️ 2.7MB/s
+      - 🇲🇾MY_1 | ⬇️ 5.3MB/s
+      - 🇲🇾MY_2 | ⬇️ 5.4MB/s
+      - 🇲🇾MY_3 | ⬇️ 7.7MB/s
+      - 🇮🇱IL_3 | ⬇️ 2.6MB/s
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rules/providers/LocalAreaNetwork.list
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./rules/providers/BanAD.list
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./rules/providers/BanProgramAD.list
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rules/providers/GoogleCN.list
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./rules/providers/SteamCN.list
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./rules/providers/Telegram.list
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rules/providers/ProxyMedia.list
+    interval: 86400
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./rules/providers/ProxyLite.list
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rules/providers/ChinaDomain.list
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rules/providers/ChinaCompanyIp.list
+    interval: 86400
+
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🛑 全球拦截
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Telegram,🚀 节点选择
+  - RULE-SET,ProxyMedia,🚀 节点选择
+  - RULE-SET,ProxyLite,🚀 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
