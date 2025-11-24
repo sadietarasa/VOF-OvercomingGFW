@@ -1,0 +1,549 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+    - 114.114.114.114
+    - 180.76.76.76
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+
+
+proxies:
+  - type: vmess
+    name: 抓取节点
+    server: 18.143.248.157
+    port: 53784
+    uuid: 3a480a7d-a4b3-46e1-d4c4-04256b77f045
+    alterId: 0
+    network: tcp
+    cipher: auto
+  - type: ss
+    name: 🇳🇱NL_5 | ⬇️ 2.1MB/s
+    server: 82.38.31.199
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+  - type: ss
+    name: 🇳🇱NL_6 | ⬇️ 4.8MB/s
+    server: 82.38.31.176
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+  - type: trojan
+    name: 🇳🇱NL_1 | ⬇️ 8.3MB/s
+    server: 81.22.132.183
+    port: 443
+    password: ee339912-0c35-4fac-8d85-180b65bcd49c
+    network: ws
+    sni: joss.gpj1.web.id
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/81.22.132.183=443
+      headers:
+        Host: joss.gpj1.web.id
+  - type: trojan
+    name: 🇨🇦CA_1 | ⬇️ 3.0MB/s
+    server: 69.28.82.253
+    port: 443
+    password: 8001fbf7-4b59-4415-a4bd-8bfded02c9c6
+    network: ws
+    sni: joss.gpj1.web.id
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/69.28.82.253=443
+      headers:
+        Host: joss.gpj1.web.id
+  - type: trojan
+    name: ❓Other_1 | ⬇️ 1.3MB/s
+    server: 45.86.229.28
+    port: 443
+    password: 9ccc3e1d-3df5-4348-aa05-738310149cc3
+    network: ws
+    sni: joss.gpj1.web.id
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/45.86.229.28=443
+      headers:
+        Host: joss.gpj1.web.id
+  - type: trojan
+    name: 🇨🇿CZ_1 | ⬇️ 2.2MB/s
+    server: 81.91.214.162
+    port: 443
+    password: f583143c-2cbe-47f5-804d-27efa55442a1
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: chrome
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/81.91.214.162=443
+  - type: vmess
+    name: 🇨🇿CZ_2 | ⬇️ 3.1MB/s
+    server: 81.91.214.85
+    port: 443
+    uuid: f282b878-8711-45a1-8c69-5564172123c1
+    alterId: 0
+    network: ws
+    cipher: zero
+    servername: vm.gpj1.web.id
+    ws-opts:
+      path: /Geo-Project/81.91.214.85-443
+      headers:
+        Host: vm.gpj1.web.id
+    tls: true
+  - type: trojan
+    name: 🇨🇿CZ_3 | ⬇️ 6.4MB/s
+    server: joss.gpj1.web.id
+    port: 443
+    password: 6e6191a3-9a93-4617-859a-8d0ea0fce937
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: chrome
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/81.91.214.85=443
+  - type: ss
+    name: 🇸🇪SE_1 | ⬇️ 5.0MB/s
+    server: 78.40.116.178
+    port: 34094
+    cipher: chacha20-ietf-poly1305
+    password: yo6h9qkhwz8UJoTZCRtoSi
+  - type: ss
+    name: 🇵🇱PL_1 | ⬇️ 3.6MB/s
+    server: clr.ducks.tel
+    port: 17844
+    cipher: chacha20-ietf-poly1305
+    password: "907560230"
+  - type: trojan
+    name: ❓Other_4 | ⬇️ 2.8MB/s
+    server: 188.132.129.199
+    port: 2053
+    password: 0b5ea56a-056b-4917-9a47-b20ecfb78ad9
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: chrome
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/188.132.129.199=2053
+  - type: ss
+    name: 🇺🇸US_14 | ⬇️ 4.4MB/s
+    server: clr.ducks.tel
+    port: 17847
+    cipher: chacha20-ietf-poly1305
+    password: "907560230"
+  - type: trojan
+    name: ❓Other_6 | ⬇️ 3.9MB/s
+    server: 45.144.51.81
+    port: 443
+    password: 063bfa6d-c68f-4955-9b33-7555b95988bc
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/45.144.51.81=443
+  - type: trojan
+    name: ❓Other_7 | ⬇️ 2.8MB/s
+    server: 194.58.39.80
+    port: 443
+    password: 0ff17c9b-5184-4534-939d-bb555dbaccdd
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/194.58.39.80=443
+  - type: trojan
+    name: ❓Other_8 | ⬇️ 3.9MB/s
+    server: 80.211.231.169
+    port: 443
+    password: b4742568-8a62-4eee-9188-15193c03043e
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/80.211.231.169=443
+  - type: trojan
+    name: ❓Other_9 | ⬇️ 1.3MB/s
+    server: 94.131.12.56
+    port: 443
+    password: b47dac40-545e-4bae-a09d-1714d457908f
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/94.131.12.56=443
+  - type: vmess
+    name: 🇩🇪DE_7 | ⬇️ 2.1MB/s
+    server: 209.38.240.218
+    port: 31407
+    uuid: cc28314a-b87e-4552-8c96-b84e0f9795df
+    alterId: 0
+    network: tcp
+    cipher: auto
+  - type: trojan
+    name: 🇩🇪DE_8 | ⬇️ 4.9MB/s
+    server: 95.182.97.125
+    port: 8443
+    password: "0"
+    network: ws
+    sni: c03237cb.ba73fe85.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+  - type: trojan
+    name: 🇺🇸US_19 | ⬇️ 4.7MB/s
+    server: 162.159.42.58
+    port: 443
+    password: "0"
+    network: ws
+    sni: c03237cb.ba73fe85.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+  - type: trojan
+    name: 🇩🇪DE_9 | ⬇️ 3.0MB/s
+    server: 89.169.8.105
+    port: 443
+    password: "0"
+    network: ws
+    sni: c03237cb.ba73fe85.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+  - type: trojan
+    name: 🇺🇸US_20 | ⬇️ 5.0MB/s
+    server: freeyx.cloudflare88.eu.org
+    port: 443
+    password: "0"
+    network: ws
+    sni: c03237cb.ba73fe85.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+  - type: trojan
+    name: 🇺🇸US_21 | ⬇️ 5.0MB/s
+    server: 198.41.208.120
+    port: 443
+    password: "0"
+    network: ws
+    sni: c03237cb.ba73fe85.netlib.re
+    alpn:
+      - http/1.1
+    skip-cert-verify: true
+    fingerprint: random
+    tls: true
+    ws-opts:
+      path: /
+  - type: trojan
+    name: ❓Other_10 | ⬇️ 4.3MB/s
+    server: 95.140.157.183
+    port: 8443
+    password: 7428ac80-eaaa-4635-b22a-dbbc156333ad
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/95.140.157.183=8443
+  - type: trojan
+    name: ❓Other_12 | ⬇️ 6.9MB/s
+    server: 35.176.229.223
+    port: 443
+    password: 02c4c6a1-e96f-4778-9cb1-a2c48e05d130
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/35.176.229.223=443
+  - type: trojan
+    name: ❓Other_13 | ⬇️ 3.3MB/s
+    server: 188.225.34.155
+    port: 443
+    password: d60629cc-621b-4f9e-ab16-84a7feacf58a
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/188.225.34.155=443
+  - type: trojan
+    name: ❓Other_14 | ⬇️ 4.5MB/s
+    server: 74.48.179.37
+    port: 32380
+    password: 122e020e-fd8c-4006-b29e-868a0a5e2d76
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/74.48.179.37=32380
+  - type: trojan
+    name: ❓Other_15 | ⬇️ 3.0MB/s
+    server: 83.217.9.110
+    port: 24443
+    password: 51c5003a-4083-4f81-85eb-c9bb1471a696
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/83.217.9.110=24443
+  - type: trojan
+    name: ❓Other_16 | ⬇️ 4.7MB/s
+    server: 80.211.249.240
+    port: 8443
+    password: 5ff970a7-2897-40e9-aef3-188e699d23ae
+    network: ws
+    sni: joss.gpj1.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/80.211.249.240=8443
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - 抓取节点
+      - 🇳🇱NL_5 | ⬇️ 2.1MB/s
+      - 🇳🇱NL_6 | ⬇️ 4.8MB/s
+      - 🇳🇱NL_1 | ⬇️ 8.3MB/s
+      - 🇨🇦CA_1 | ⬇️ 3.0MB/s
+      - ❓Other_1 | ⬇️ 1.3MB/s
+      - 🇨🇿CZ_1 | ⬇️ 2.2MB/s
+      - 🇨🇿CZ_2 | ⬇️ 3.1MB/s
+      - 🇨🇿CZ_3 | ⬇️ 6.4MB/s
+      - 🇸🇪SE_1 | ⬇️ 5.0MB/s
+      - 🇵🇱PL_1 | ⬇️ 3.6MB/s
+      - ❓Other_4 | ⬇️ 2.8MB/s
+      - 🇺🇸US_14 | ⬇️ 4.4MB/s
+      - ❓Other_6 | ⬇️ 3.9MB/s
+      - ❓Other_7 | ⬇️ 2.8MB/s
+      - ❓Other_8 | ⬇️ 3.9MB/s
+      - ❓Other_9 | ⬇️ 1.3MB/s
+      - 🇩🇪DE_7 | ⬇️ 2.1MB/s
+      - 🇩🇪DE_8 | ⬇️ 4.9MB/s
+      - 🇺🇸US_19 | ⬇️ 4.7MB/s
+      - 🇩🇪DE_9 | ⬇️ 3.0MB/s
+      - 🇺🇸US_20 | ⬇️ 5.0MB/s
+      - 🇺🇸US_21 | ⬇️ 5.0MB/s
+      - ❓Other_10 | ⬇️ 4.3MB/s
+      - ❓Other_12 | ⬇️ 6.9MB/s
+      - ❓Other_13 | ⬇️ 3.3MB/s
+      - ❓Other_14 | ⬇️ 4.5MB/s
+      - ❓Other_15 | ⬇️ 3.0MB/s
+      - ❓Other_16 | ⬇️ 4.7MB/s
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - 抓取节点
+      - 🇳🇱NL_5 | ⬇️ 2.1MB/s
+      - 🇳🇱NL_6 | ⬇️ 4.8MB/s
+      - 🇳🇱NL_1 | ⬇️ 8.3MB/s
+      - 🇨🇦CA_1 | ⬇️ 3.0MB/s
+      - ❓Other_1 | ⬇️ 1.3MB/s
+      - 🇨🇿CZ_1 | ⬇️ 2.2MB/s
+      - 🇨🇿CZ_2 | ⬇️ 3.1MB/s
+      - 🇨🇿CZ_3 | ⬇️ 6.4MB/s
+      - 🇸🇪SE_1 | ⬇️ 5.0MB/s
+      - 🇵🇱PL_1 | ⬇️ 3.6MB/s
+      - ❓Other_4 | ⬇️ 2.8MB/s
+      - 🇺🇸US_14 | ⬇️ 4.4MB/s
+      - ❓Other_6 | ⬇️ 3.9MB/s
+      - ❓Other_7 | ⬇️ 2.8MB/s
+      - ❓Other_8 | ⬇️ 3.9MB/s
+      - ❓Other_9 | ⬇️ 1.3MB/s
+      - 🇩🇪DE_7 | ⬇️ 2.1MB/s
+      - 🇩🇪DE_8 | ⬇️ 4.9MB/s
+      - 🇺🇸US_19 | ⬇️ 4.7MB/s
+      - 🇩🇪DE_9 | ⬇️ 3.0MB/s
+      - 🇺🇸US_20 | ⬇️ 5.0MB/s
+      - 🇺🇸US_21 | ⬇️ 5.0MB/s
+      - ❓Other_10 | ⬇️ 4.3MB/s
+      - ❓Other_12 | ⬇️ 6.9MB/s
+      - ❓Other_13 | ⬇️ 3.3MB/s
+      - ❓Other_14 | ⬇️ 4.5MB/s
+      - ❓Other_15 | ⬇️ 3.0MB/s
+      - ❓Other_16 | ⬇️ 4.7MB/s
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 抓取节点
+      - 🇳🇱NL_5 | ⬇️ 2.1MB/s
+      - 🇳🇱NL_6 | ⬇️ 4.8MB/s
+      - 🇳🇱NL_1 | ⬇️ 8.3MB/s
+      - 🇨🇦CA_1 | ⬇️ 3.0MB/s
+      - ❓Other_1 | ⬇️ 1.3MB/s
+      - 🇨🇿CZ_1 | ⬇️ 2.2MB/s
+      - 🇨🇿CZ_2 | ⬇️ 3.1MB/s
+      - 🇨🇿CZ_3 | ⬇️ 6.4MB/s
+      - 🇸🇪SE_1 | ⬇️ 5.0MB/s
+      - 🇵🇱PL_1 | ⬇️ 3.6MB/s
+      - ❓Other_4 | ⬇️ 2.8MB/s
+      - 🇺🇸US_14 | ⬇️ 4.4MB/s
+      - ❓Other_6 | ⬇️ 3.9MB/s
+      - ❓Other_7 | ⬇️ 2.8MB/s
+      - ❓Other_8 | ⬇️ 3.9MB/s
+      - ❓Other_9 | ⬇️ 1.3MB/s
+      - 🇩🇪DE_7 | ⬇️ 2.1MB/s
+      - 🇩🇪DE_8 | ⬇️ 4.9MB/s
+      - 🇺🇸US_19 | ⬇️ 4.7MB/s
+      - 🇩🇪DE_9 | ⬇️ 3.0MB/s
+      - 🇺🇸US_20 | ⬇️ 5.0MB/s
+      - 🇺🇸US_21 | ⬇️ 5.0MB/s
+      - ❓Other_10 | ⬇️ 4.3MB/s
+      - ❓Other_12 | ⬇️ 6.9MB/s
+      - ❓Other_13 | ⬇️ 3.3MB/s
+      - ❓Other_14 | ⬇️ 4.5MB/s
+      - ❓Other_15 | ⬇️ 3.0MB/s
+      - ❓Other_16 | ⬇️ 4.7MB/s
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rules/providers/LocalAreaNetwork.list
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./rules/providers/BanAD.list
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./rules/providers/BanProgramAD.list
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rules/providers/GoogleCN.list
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./rules/providers/SteamCN.list
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./rules/providers/Telegram.list
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rules/providers/ProxyMedia.list
+    interval: 86400
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./rules/providers/ProxyLite.list
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rules/providers/ChinaDomain.list
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rules/providers/ChinaCompanyIp.list
+    interval: 86400
+
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🛑 全球拦截
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Telegram,🚀 节点选择
+  - RULE-SET,ProxyMedia,🚀 节点选择
+  - RULE-SET,ProxyLite,🚀 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
