@@ -1,0 +1,336 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+log-level: info
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+    - 114.114.114.114
+    - 180.76.76.76
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+
+
+proxies:
+  - type: trojan
+    name: 🇷🇺RU_1 | ⬇️ 7.0MB/s
+    server: 37.18.14.33
+    port: 443
+    password: Qzy7tgpRhu
+    network: tcp
+    sni: m.vk.com
+    skip-cert-verify: true
+    tls: true
+  - type: ss
+    name: 🇹🇷TR_1 | ⬇️ 4.5MB/s
+    server: 185.39.204.189
+    port: 34085
+    cipher: chacha20-ietf-poly1305
+    password: depjSbjv2Uql6W4Vge7sDf
+  - type: ss
+    name: 🇳🇱NL_3 | ⬇️ 1.2MB/s
+    server: 45.87.175.193
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: cvII85TrW6n0OGyfpHVS1u
+  - type: ss
+    name: 抓取节点_1
+    server: 5.129.214.186
+    port: 6403
+    cipher: chacha20-ietf-poly1305
+    password: HWNsKy61qPyoDtrEYEtZuk
+  - type: trojan
+    name: ❓Other_3 | ⬇️ 5.0MB/s
+    server: 77.37.96.132
+    port: 443
+    password: 22dcdbbe-db22-4ebb-b2f3-ad6b6a133a99
+    network: ws
+    sni: joss.gpj.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/77.37.96.132=443
+  - type: ss
+    name: 🇳🇱NL_6 | ⬇️ 5.0MB/s
+    server: 5.129.214.186
+    port: 6403
+    cipher: chacha20-ietf-poly1305
+    password: HWNsKy61qPyoDtrEYEtZuk
+  - type: ss
+    name: 🇳🇱NL_4 | ⬇️ 3.6MB/s
+    server: 213.176.16.77
+    port: 7022
+    cipher: chacha20-ietf-poly1305
+    password: 8HtC7rj6NfZncXYvAjDV5t
+  - type: ss
+    name: 🇸🇪SE_1 | ⬇️ 5.0MB/s
+    server: 78.40.116.178
+    port: 34094
+    cipher: chacha20-ietf-poly1305
+    password: yo6h9qkhwz8UJoTZCRtoSi
+  - type: ss
+    name: "Channel id: @ShadowProxy66 🇳🇱"
+    server: 213.176.16.77
+    port: 7022
+    cipher: chacha20-ietf-poly1305
+    password: 8HtC7rj6NfZncXYvAjDV5t
+  - type: ss
+    name: 🇸🇪SE_1 | ⬇️ 2.9MB/s
+    server: 78.40.116.178
+    port: 34094
+    cipher: chacha20-ietf-poly1305
+    password: yo6h9qkhwz8UJoTZCRtoSi
+  - type: trojan
+    name: ❓Other_4 | ⬇️ 3.4MB/s
+    server: 185.121.12.205
+    port: 8443
+    password: 588d6340-553d-40f0-b16c-bf22fdc38698
+    network: ws
+    sni: joss.gpj.web.id
+    fingerprint: randomized
+    tls: true
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/185.121.12.205=8443
+  - type: vmess
+    name: 🇸🇬SG_7 | ⬇️ 10.5MB/s
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    network: tcp
+    cipher: auto
+  - type: ss
+    name: 🇸🇬SG_1 | ⬇️ 1.1MB/s
+    server: 167.150.100.115
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: pJtDFXMfdW9VNdJpaf4e2LfFkXdWgxrz
+  - type: trojan
+    name: 🇺🇸US_33 | ⬇️ 2.0MB/s
+    server: 107.174.82.102.sslip.io
+    port: 443
+    password: bb824a22-b7ce-427b-9ed6-1adf0751da02
+    network: ws
+    sni: 107.174.82.102.sslip.io
+    alpn:
+      - http/1.1
+    tls: true
+    ws-opts:
+      path: /gXKGj8a1tp1nNbZEcRugowKV
+      headers:
+        Host: 107.174.82.102.sslip.io
+  - type: ss
+    name: 🇭🇷HR_1 | ⬇️ 4.1MB/s
+    server: 185.156.110.92
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: gXOXk2FJwsz9P6nXIICuDNOqF9gWX1dn
+  - type: trojan
+    name: "Channel id: @ShadowProxy66 🇭🇰"
+    server: 58.152.53.22
+    port: 443
+    password: BxceQaOe
+    network: tcp
+    sni: t.me/ripaojiedian
+    skip-cert-verify: true
+    tls: true
+  - type: trojan
+    name: 🇭🇰HK_1 | ⬇️ 5.2MB/s
+    server: 58.152.53.22
+    port: 443
+    password: BxceQaOe
+    network: tcp
+    sni: t.me/ripaojiedian
+    skip-cert-verify: true
+    fingerprint: chrome
+    tls: true
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - 🇷🇺RU_1 | ⬇️ 7.0MB/s
+      - 🇹🇷TR_1 | ⬇️ 4.5MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.2MB/s
+      - 抓取节点_1
+      - ❓Other_3 | ⬇️ 5.0MB/s
+      - 🇳🇱NL_6 | ⬇️ 5.0MB/s
+      - 🇳🇱NL_4 | ⬇️ 3.6MB/s
+      - 🇸🇪SE_1 | ⬇️ 5.0MB/s
+      - "Channel id: @ShadowProxy66 🇳🇱"
+      - 🇸🇪SE_1 | ⬇️ 2.9MB/s
+      - ❓Other_4 | ⬇️ 3.4MB/s
+      - 🇸🇬SG_7 | ⬇️ 10.5MB/s
+      - 🇸🇬SG_1 | ⬇️ 1.1MB/s
+      - 🇺🇸US_33 | ⬇️ 2.0MB/s
+      - 🇭🇷HR_1 | ⬇️ 4.1MB/s
+      - "Channel id: @ShadowProxy66 🇭🇰"
+      - 🇭🇰HK_1 | ⬇️ 5.2MB/s
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - 🇷🇺RU_1 | ⬇️ 7.0MB/s
+      - 🇹🇷TR_1 | ⬇️ 4.5MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.2MB/s
+      - 抓取节点_1
+      - ❓Other_3 | ⬇️ 5.0MB/s
+      - 🇳🇱NL_6 | ⬇️ 5.0MB/s
+      - 🇳🇱NL_4 | ⬇️ 3.6MB/s
+      - 🇸🇪SE_1 | ⬇️ 5.0MB/s
+      - "Channel id: @ShadowProxy66 🇳🇱"
+      - 🇸🇪SE_1 | ⬇️ 2.9MB/s
+      - ❓Other_4 | ⬇️ 3.4MB/s
+      - 🇸🇬SG_7 | ⬇️ 10.5MB/s
+      - 🇸🇬SG_1 | ⬇️ 1.1MB/s
+      - 🇺🇸US_33 | ⬇️ 2.0MB/s
+      - 🇭🇷HR_1 | ⬇️ 4.1MB/s
+      - "Channel id: @ShadowProxy66 🇭🇰"
+      - 🇭🇰HK_1 | ⬇️ 5.2MB/s
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇷🇺RU_1 | ⬇️ 7.0MB/s
+      - 🇹🇷TR_1 | ⬇️ 4.5MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.2MB/s
+      - 抓取节点_1
+      - ❓Other_3 | ⬇️ 5.0MB/s
+      - 🇳🇱NL_6 | ⬇️ 5.0MB/s
+      - 🇳🇱NL_4 | ⬇️ 3.6MB/s
+      - 🇸🇪SE_1 | ⬇️ 5.0MB/s
+      - "Channel id: @ShadowProxy66 🇳🇱"
+      - 🇸🇪SE_1 | ⬇️ 2.9MB/s
+      - ❓Other_4 | ⬇️ 3.4MB/s
+      - 🇸🇬SG_7 | ⬇️ 10.5MB/s
+      - 🇸🇬SG_1 | ⬇️ 1.1MB/s
+      - 🇺🇸US_33 | ⬇️ 2.0MB/s
+      - 🇭🇷HR_1 | ⬇️ 4.1MB/s
+      - "Channel id: @ShadowProxy66 🇭🇰"
+      - 🇭🇰HK_1 | ⬇️ 5.2MB/s
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rules/providers/LocalAreaNetwork.list
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./rules/providers/BanAD.list
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./rules/providers/BanProgramAD.list
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rules/providers/GoogleCN.list
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./rules/providers/SteamCN.list
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./rules/providers/Telegram.list
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rules/providers/ProxyMedia.list
+    interval: 86400
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./rules/providers/ProxyLite.list
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rules/providers/ChinaDomain.list
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rules/providers/ChinaCompanyIp.list
+    interval: 86400
+
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🛑 全球拦截
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Telegram,🚀 节点选择
+  - RULE-SET,ProxyMedia,🚀 节点选择
+  - RULE-SET,ProxyLite,🚀 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
